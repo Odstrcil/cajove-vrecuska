@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moja zbierka – Svet čajových vrecúšok</title>
+  <meta name="description" content="Vrecúška jednej čajovej firmy z mojej zbierky – predná a zadná strana s prekladom textov.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="webcaje.css">
+  <script src="js/sekcie.js"></script>
+  <script src="js/stranka.js"></script>
+  <script src="js/zbierka.js"></script>
+  <script src="js/zbierka_stranka.js"></script>
+</head>
+<body>
+  <header class="vnutorna-hlavicka">
+    <a class="logo" href="index.html"><img src="obrazky/titulka/nadpis.png" alt="Svet čajových vrecúšok – na titulnú stránku" width="900" height="450"></a>
+    <nav id="menu" aria-label="Menu"></nav>
+  </header>
+
+  <main class="obsah obsah-siroky">
+    <p class="rubrika"><a href="moja_zbierka.html">Moja zbierka</a> · zoznam firiem</p>
+    <div id="firma"></div>
+  </main>
+
+  <dialog id="okno-vrecuska" class="okno-vrecuska" aria-label="Vrecúško">
+    <button type="button" id="okno-zavriet" class="okno-zavriet" aria-label="Zavrieť">×</button>
+    <div id="okno-obsah"></div>
+  </dialog>
+
+  <footer class="pata">
+    <p>© 2026 Svet čajových vrecúšok</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Svet čajových vrecúšok</title>
+  <meta name="description" content="Zbierka papierových obalov z porciovaného čaju a malé príbehy okolo nich.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="webcaje.css">
+  <script src="js/sekcie.js"></script>
+  <script src="js/citaty.js"></script>
+  <script src="js/kalendar.js"></script>
+  <script src="js/stranka.js"></script>
+</head>
+<body>
+  <header class="titulka-hlavicka">
+    <img class="ozdoba ozdoba-lava" src="obrazky/titulka/ozdoba_cajnik.png" alt="">
+    <div class="titulka-stred">
+      <h1><img src="obrazky/titulka/nadpis.png" alt="Svet čajových vrecúšok – Malé príbehy v každej šálke" width="900" height="450"></h1>
+      <p class="privitanie">Vitajte pri mojej zbierke papierových obalov z porciovaného čaju. Je ich už vyše dvesto od asi štyridsiatich firiem – a za mnohými je malý príbeh.</p>
+    </div>
+    <img class="ozdoba ozdoba-prava" src="obrazky/titulka/ozdoba_knihy.png" alt="">
+  </header>
+
+  <main>
+    <nav class="hrnceky" aria-label="Hlavné časti stránky">
+      <a class="hrncek" href="moja_zbierka.html" data-sekcia="moja_zbierka">
+        <img src="obrazky/titulka/hrncek_moja_zbierka.webp" alt="Moja zbierka" width="1254" height="1254">
+      </a>
+      <a class="hrncek" href="zivot_zberatela.html" data-sekcia="zivot_zberatela">
+        <img src="obrazky/titulka/hrncek_zivot_zberatela.webp" alt="Život zberateľa" width="1254" height="1254">
+      </a>
+      <a class="hrncek" href="svet_caju.html" data-sekcia="svet_caju">
+        <img src="obrazky/titulka/hrncek_svet_caju.webp" alt="Svet čaju" width="1254" height="1254">
+      </a>
+      <a class="hrncek" href="cajove_drobnosti.html" data-sekcia="cajove_drobnosti">
+        <img src="obrazky/titulka/hrncek_cajove_drobnosti.webp" alt="Čajové drobnosti" width="1254" height="1254">
+      </a>
+    </nav>
+
+    <section class="bloky" aria-label="Aktuálne">
+      <article class="blok">
+        <a class="blok-hlavicka" href="citaty.html"><img src="obrazky/titulka/napis_citat_tyzdna.webp" alt="Citát týždňa" width="2000" height="667"></a>
+        <div id="citat-tyzdna"></div>
+        <a class="viac" href="citaty.html">Všetky citáty</a>
+      </article>
+
+      <article class="blok">
+        <a class="blok-hlavicka" href="kalendar.html"><img src="obrazky/titulka/napis_cajovy_kalendar.webp" alt="Čajový kalendár" width="2000" height="667"></a>
+        <div id="kalendar-udalost"></div>
+        <a class="viac" href="kalendar.html">Celý čajový kalendár</a>
+      </article>
+
+      <article class="blok">
+        <div class="blok-hlavicka"><img src="obrazky/titulka/napis_co_je_nove.webp" alt="Čo je nové" width="2000" height="667"></div>
+        <ul class="zoznam-noviniek" id="novinky"></ul>
+      </article>
+
+      <article class="blok">
+        <div class="blok-hlavicka"><img src="obrazky/titulka/napis_kniha_navstev.webp" alt="Kniha návštev" width="2000" height="667"></div>
+        <p>Zastavili ste sa na šálku? Budem rád, keď mi tu necháte pár slov.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="pata">
+    <p>© 2026 Svet čajových vrecúšok</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moja zbierka – Svet čajových vrecúšok</title>
+  <meta name="description" content="Zbierka obalov čajových vrecúšok – zoznam firiem, predné aj zadné strany vrecúšok s prekladom textov.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="webcaje.css">
+  <script src="js/sekcie.js"></script>
+  <script src="js/stranka.js"></script>
+  <script src="js/zbierka.js"></script>
+  <script src="js/zbierka_stranka.js"></script>
+</head>
+<body>
+  <header class="vnutorna-hlavicka">
+    <a class="logo" href="index.html"><img src="obrazky/titulka/nadpis.png" alt="Svet čajových vrecúšok – na titulnú stránku" width="900" height="450"></a>
+    <nav id="menu" aria-label="Menu"></nav>
+  </header>
+
+  <main class="obsah">
+    <h1>Moja zbierka</h1>
+    <p class="uvod">Obaly čajových vrecúšok z mojej zbierky. Kliknite na firmu a ukážu sa jej vrecúška.</p>
+    <p class="male" id="pocet-zbierky"></p>
+
+    <aside class="vedeli-ste">
+      <p><strong>Vedeli ste?</strong> Čaj, ktorý sa volá „Jahoda“, nemusí chutiť len po jahode. Vo vrecúšku býva často celá partia rastlín – šípky, ibištek, jablko, mäta… Rastlina z názvu je ako spevák na plagáte, ale pieseň hrá celá kapela. Kto chce vedieť, kto v nej hrá, nájde to na zadnej strane obalu – zložky sa tam píšu od tej, ktorej je najviac.</p>
+    </aside>
+
+    <div class="hladanie">
+      <label for="hladat">Máte doma čaj a zaujíma vás, či ho mám aj ja? Napíšte jeho názov:</label>
+      <input type="search" id="hladat" placeholder="napríklad Earl Grey, citrón, malina…" autocomplete="off">
+      <ul id="vysledky" class="vysledky" aria-live="polite"></ul>
+    </div>
+
+    <nav id="abeceda" class="abeceda" aria-label="Firmy podľa abecedy"></nav>
+
+    <div class="stuha-obal">
+      <div class="stuha" aria-hidden="true"></div>
+      <ul id="zoznam-firiem" class="zoznam-firiem"></ul>
+    </div>
+  </main>
+
+  <footer class="pata">
+    <p>© 2026 Svet čajových vrecúšok</p>
+  </footer>
+</body>
+</html>

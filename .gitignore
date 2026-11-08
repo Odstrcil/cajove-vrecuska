@@ -1,0 +1,7 @@
+.env
+*.key
+*.pem
+id_*
+Thumbs.db
+desktop.ini
+.DS_Store
