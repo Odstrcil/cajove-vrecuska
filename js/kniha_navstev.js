@@ -48,7 +48,16 @@
     }
     var zoznam = document.createElement("ul");
     zoznam.className = "navstevy";
-    odkazy.forEach(function (r) {
+    odkazy.forEach(function (r, i) {
+      if (i > 0) {
+        var ciara = document.createElement("li");
+        ciara.className = "cajovy-oddelovac";
+        ciara.setAttribute("aria-hidden", "true");
+        var salka = document.createElement("span");
+        salka.className = "salka";
+        ciara.appendChild(salka);
+        zoznam.appendChild(ciara);
+      }
       var li = document.createElement("li");
       var text = document.createElement("p");
       text.className = "navsteva-text";
@@ -78,7 +87,7 @@
     var tlacidlo = form.querySelector("button");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var dakujem = "Ďakujeme! Odkaz sa tu objaví, keď ho prečítame a schválime.";
+      var dakujem = "Ďakujeme! Odkaz sa objaví medzi ostatnými, keď ho prečítame a schválime.";
       /* Toto políčko človek nevidí, vypĺňajú ho len roboty. */
       if (form.webova_adresa.value) { stav.textContent = dakujem; form.reset(); return; }
       var meno = form.meno.value.trim(), odkaz = form.odkaz.value.trim();
@@ -95,6 +104,10 @@
     });
   }
 
-  function spusti() { nacitaj(); odosielanie(); }
+  /* Stránka s formulárom odosiela, stránka „Čo napísali iní“ zobrazuje. */
+  function spusti() {
+    if (document.getElementById("odkazy")) { nacitaj(); }
+    if (document.getElementById("kniha-formular")) { odosielanie(); }
+  }
   if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", spusti); } else { spusti(); }
 })();
