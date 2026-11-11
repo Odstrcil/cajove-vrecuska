@@ -617,6 +617,8 @@ html { scroll-padding-top: 115px; }
   border-top: 1px solid var(--linka);
 }
 
+.pata .verzia { margin: 4px 0 0; font-size: 0.85em; }
+
 /* ---------- Menšie obrazovky ---------- */
 
 @media (max-width: 1100px) {

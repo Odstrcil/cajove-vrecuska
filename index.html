@@ -65,6 +65,16 @@
 
   <footer class="pata">
     <p>© 2026 Svet čajových vrecúšok</p>
+    <p class="verzia" id="verzia" hidden></p>
   </footer>
+  <!-- js/verzia.js vytvorí sám skript pri nahratí na internet (čas nahratia); v počítači neexistuje. -->
+  <script src="js/verzia.js"></script>
+  <script>
+    if (window.VERZIA) {
+      var verzia = document.getElementById("verzia");
+      verzia.textContent = "Nová verzia: " + window.VERZIA;
+      verzia.hidden = false;
+    }
+  </script>
 </body>
 </html>
