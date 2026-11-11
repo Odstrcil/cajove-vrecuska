@@ -11,17 +11,19 @@ window.SEKCIE = [
 // pripíše navrch. Novinky sú upútavky: majú návštevníka zlákať, nie len oznámiť.
 // odkaz: stránka, na ktorú novinka vedie.
 window.NOVINKY = [
-  { datum: "7. 11. 2026", text: "Ďalších 51 vrecúšok: 19 Popradských, 23 Pickwickov a staré Elixíry s písmenom P v ovále", odkaz: "moja_zbierka.html" },
-  { datum: "3. 11. 2026", text: "Na výstavke ich bolo 137 a do dvesto chýbali tri. Príbeh o jednej pani učiteľke a o tom, ako vznikla táto stránka", odkaz: "zivot_zberatela_od_137_k_200.html" },
-  { datum: "30. 10. 2026", text: "Kedysi nevyhrával najlepší čaj, ale ten, ktorý prvý doplával do Londýna – preteky plachetníc o čaj z novej úrody", odkaz: "svet_caju_klipre.html" },
-  // Ďalšie upútavky – teraz sa neukazujú, poslúžia, keď bude zoznam všetkých noviniek.
-  { datum: "8. 11. 2026", text: "Krabička z nórskeho obchodu, všetko po nórsky – a na spodku drobným písmom: vyrobené v Česku", odkaz: "krabicky_kolonihagen.html" },
-  { datum: "6. 11. 2026", text: "Do zbierky pribudlo 54 vrecúšok zo 16 nových firiem – aj detská básnička o šiestich minútach a čaj, ktorý sa mal vypiť do roku 2016", odkaz: "moja_zbierka.html" },
-  { datum: "5. 11. 2026", text: "Do zbierky pribudlo 25 vrecúšok – aj obrie americké a bylinkový čaj s čiernym korením ako do guláša", odkaz: "moja_zbierka.html" },
-  { datum: "5. 11. 2026", text: "Chlapec z chudobnej štvrte, ktorý dal meno čaju Lipton – a päťkrát s úsmevom prehral najslávnejšie preteky jácht", odkaz: "svet_caju_lipton.html" },
-  { datum: "4. 11. 2026", text: "Vanilka nie je kôra, ale orchidea – a pestovať ju naučil svet dvanásťročný chlapec", odkaz: "svet_caju_vanilka_vonava.html" },
-  { datum: "3. 11. 2026", text: "Na upršané dni a do postele: hry s prázdnymi obalmi od čaju, bez internetu", odkaz: "cajove_drobnosti_hry.html" },
-  { datum: "3. 11. 2026", text: "Oddychová izba, v ktorej sa dá klikať na predmety – za obrazom je citát, za kalendárom čajové sviatky", odkaz: "cajove_drobnosti.html" },
+  { datum: "9. 11. 2026", text: "Krabička, ktorá vás rozcvičí", odkaz: "krabicky_pukka_yogi.html" },
+  { datum: "9. 11. 2026", text: "Teekanne a ďalšie Pickwicky v zbierke", odkaz: "moja_zbierka_firma.html?firma=teekanne" },
+  { datum: "8. 11. 2026", text: "Nórsky čaj z Česka", odkaz: "krabicky_kolonihagen.html" },
+  { datum: "3. 11. 2026", text: "Od 137 k 200", odkaz: "zivot_zberatela_od_137_k_200.html" },
+  { datum: "30. 10. 2026", text: "Preteky plachetníc o prvý čaj", odkaz: "svet_caju_klipre.html" },
+  // Na titulke je prvých 5; ďalších 5 sa ukáže po kliknutí na tlačidlo. Zvyšok sa neukazuje.
+  { datum: "7. 11. 2026", text: "Ďalších 51 vrecúšok v zbierke", odkaz: "moja_zbierka.html" },
+  { datum: "6. 11. 2026", text: "54 vrecúšok zo 16 nových firiem", odkaz: "moja_zbierka.html" },
+  { datum: "5. 11. 2026", text: "25 nových vrecúšok v zbierke", odkaz: "moja_zbierka.html" },
+  { datum: "5. 11. 2026", text: "Thomas Lipton a jeho čaj", odkaz: "svet_caju_lipton.html" },
+  { datum: "4. 11. 2026", text: "Vanilka je orchidea", odkaz: "svet_caju_vanilka_vonava.html" },
+  { datum: "3. 11. 2026", text: "Hry s prázdnymi obalmi", odkaz: "cajove_drobnosti_hry.html" },
+  { datum: "3. 11. 2026", text: "Izba, v ktorej sa dá klikať", odkaz: "cajove_drobnosti.html" },
   { datum: "2. 11. 2026", text: "Prečo mätu piepornú v lese takmer nestretnete", odkaz: "svet_caju_mata_pieporna.html" },
-  { datum: "2. 11. 2026", text: "Šípka z čaju a chĺpky za golierom – zaujímavosti o ruži šípovej", odkaz: "svet_caju_ruza_sipova.html" }
+  { datum: "2. 11. 2026", text: "Šípka z čaju", odkaz: "svet_caju_ruza_sipova.html" }
 ];

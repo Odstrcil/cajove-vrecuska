@@ -209,20 +209,31 @@
   function novinky() {
     var zoznam = document.getElementById("novinky");
     if (!zoznam) return;
-    var n = (window.NOVINKY || []).slice(0, 3);
+    var n = (window.NOVINKY || []).slice(0, 10);
     if (!n.length) {
       zoznam.appendChild(el("li", "novinka-prazdna",
         "Stránka sa práve zakladá. Prvé novinky pribudnú spolu s prvými firmami zo zbierky."));
       return;
     }
-    n.forEach(function (x) {
-      var li = el("li", "novinka");
+    n.forEach(function (x, i) {
+      var li = el("li", i < 5 ? "novinka" : "novinka navyse");
       li.appendChild(el("span", "novinka-datum", x.datum));
       var a = el("a", null, x.text);
       a.href = x.odkaz;
       li.appendChild(a);
       zoznam.appendChild(li);
     });
+    if (n.length > 5) {
+      var tlacidlo = el("button", "vrecka-viac", "Ďalšie novinky");
+      tlacidlo.type = "button";
+      tlacidlo.setAttribute("aria-expanded", "false");
+      tlacidlo.addEventListener("click", function () {
+        var otvorene = zoznam.classList.toggle("otvorene");
+        tlacidlo.textContent = otvorene ? "Ukázať menej" : "Ďalšie novinky";
+        tlacidlo.setAttribute("aria-expanded", otvorene ? "true" : "false");
+      });
+      zoznam.parentNode.appendChild(tlacidlo);
+    }
   }
 
   // ---- Prezeranie obrázkov v článku ----
@@ -341,7 +352,7 @@
     zoznam.forEach(function (x, i) {
       var f = x.firma, v = x.vrecko;
       var li = el("li");
-      if (pocet >= ZBALIT_OD && i >= UKAZAT_NAJPRV) li.className = "skryte";
+      if (pocet >= ZBALIT_OD && i >= UKAZAT_NAJPRV) li.className = "navyse";
       var a = el("a");
       a.href = "moja_zbierka_firma.html?firma=" + f.id + "#v" + v.cislo;
       var obr = el("img");
@@ -370,7 +381,7 @@
     if (mys) obal.appendChild(nahlad);
     box.appendChild(obal);
 
-    var skryte = ul.querySelectorAll("li.skryte");
+    var skryte = ul.querySelectorAll("li.navyse");
     if (skryte.length) {
       var tlacidlo = el("button", "vrecka-viac", "Ukázať všetky (" + pocet + ")");
       tlacidlo.type = "button";

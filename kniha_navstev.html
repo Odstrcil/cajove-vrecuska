@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kniha návštev – Svet čajových vrecúšok</title>
+  <meta name="description" content="Zastavte sa a nechajte nám pár slov v Knihe návštev.">
+  <link rel="stylesheet" href="webcaje.css">
+  <script data-goatcounter="https://cajove-vrecuska.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <script src="js/sekcie.js"></script>
+  <script src="js/stranka.js"></script>
+  <script src="js/kniha_navstev.js" defer></script>
+</head>
+<body>
+  <header class="vnutorna-hlavicka">
+    <a class="logo" href="index.html"><img src="obrazky/titulka/nadpis.png" alt="Svet čajových vrecúšok – na titulnú stránku" width="900" height="450"></a>
+    <nav id="menu" aria-label="Menu"></nav>
+  </header>
+
+  <main class="obsah clanok">
+    <p class="rubrika"><a href="cajove_drobnosti.html">Čajové drobnosti</a> · Kniha návštev</p>
+    <h1>Kniha návštev</h1>
+    <p class="perex">Zastavili ste sa pri našich vrecúškach? Potešíte nás, keď nám tu necháte pár slov.</p>
+
+    <form id="kniha-formular" class="kniha-formular">
+      <label for="kniha-meno">Meno alebo prezývka</label>
+      <input id="kniha-meno" name="meno" type="text" maxlength="60" autocomplete="off" required>
+      <label for="kniha-odkaz">Váš odkaz</label>
+      <textarea id="kniha-odkaz" name="odkaz" rows="6" maxlength="1500" required></textarea>
+      <div class="skryte" aria-hidden="true">
+        <label for="kniha-web">Toto políčko nevypĺňajte</label>
+        <input id="kniha-web" name="webova_adresa" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit" class="vrecka-viac">Odoslať odkaz</button>
+      <p id="kniha-stav" class="kniha-stav" role="status"></p>
+    </form>
+
+    <aside class="poznamka">
+      <p>Odkaz sa tu objaví až potom, ako ho prečítame a schválime. Zverejníme len meno alebo prezývku a text, preto sem prosím nepíšte adresu ani telefón. Odkazy sa ukladajú v službe Google.</p>
+    </aside>
+
+    <h2>Odkazy od návštevníkov</h2>
+    <div id="odkazy"><p class="male">Načítavam odkazy…</p></div>
+  </main>
+
+  <footer class="pata">
+    <p>© 2026 Svet čajových vrecúšok</p>
+  </footer>
+</body>
+</html>
