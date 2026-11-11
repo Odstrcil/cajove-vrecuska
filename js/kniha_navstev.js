@@ -68,6 +68,17 @@
       podpis.textContent = (r[1] || "").trim() + (kedy ? ", " + kedy : "");
       li.appendChild(text);
       li.appendChild(podpis);
+      /* Stĺpec E v tabuľke: nepovinná odpoveď zberateľa (stĺpec D je „a“ = schválené). */
+      var odpoved = (r[4] || "").trim();
+      if (odpoved) {
+        var box = document.createElement("div");
+        box.className = "navsteva-odpoved";
+        var kto = document.createElement("strong");
+        kto.textContent = "Odpoveď zberateľa: ";
+        box.appendChild(kto);
+        box.appendChild(document.createTextNode(odpoved));
+        li.appendChild(box);
+      }
       zoznam.appendChild(li);
     });
     ciel.appendChild(zoznam);
