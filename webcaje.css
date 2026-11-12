@@ -269,6 +269,11 @@ html { scroll-padding-top: 115px; }
 .clanok figure { margin: 24px 0; }
 .clanok figure img { border-radius: 12px; }
 .clanok figcaption { font-size: 0.85em; color: var(--text-jemny); margin-top: 6px; }
+/* Skutočné fotky na výšku (Život zberateľa) – nech nie sú cez celú obrazovku */
+.clanok figure.foto-na-vysku { max-width: 420px; margin-left: auto; margin-right: auto; }
+.clanok figure.foto-stredna { max-width: 560px; margin-left: auto; margin-right: auto; }
+.fotky-dve { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 640px; margin: 0 auto; }
+.clanok figure:has(.fotky-dve) figcaption { max-width: 640px; margin-left: auto; margin-right: auto; }
 
 .poznamka {
   border-left: 3px solid var(--zelena);

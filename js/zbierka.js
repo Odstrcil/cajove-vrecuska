@@ -1256,6 +1256,17 @@ window.ZBIERKA = [
         rastliny: [],
         poznamka: "" }
     ]
+  },
+  {
+    id: "ronnefeldt", nazov: "Rønnefeldt",
+    o_firme: "Nemecký čajový dom z Frankfurtu nad Mohanom. Na vrecúšku je znak „200 Years of Tea Excellence“ – 200 rokov čajovej tradície. Svoje obálky na vrecúška volá Teavelope.",
+    vrecuska: [
+      { cislo: "001", skupina: "Teavelope", nazov: "English Breakfast", preklad: "anglický raňajkový čaj – čierny čaj",
+        na_obale: "Bielo-modré vrecúško s modrou šálkou, BIO. Vzadu tmavomodré s názvom po rusky, arabsky, japonsky, francúzsky a taliansky. K vrecúšku patrí pekná visačka: vpredu názov a čas lúhovania, vzadu logo Rønnefeldt.",
+        priprava: "3–4 minúty",
+        rastliny: ["čajovník čínsky"],
+        poznamka: "Dvojsté vrecúško, ktoré si môžete pozrieť na tejto stránke. Našlo sa pri zákusku v cukrárni." }
+    ]
   }
 ];
 
