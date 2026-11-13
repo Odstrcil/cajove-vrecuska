@@ -318,6 +318,12 @@ html { scroll-padding-top: 115px; }
 
 /* ---------- Moja zbierka ---------- */
 
+/* Návod: tri spôsoby hľadania v zbierke */
+.navod-zbierka { margin: 16px 0 20px; padding: 6px 22px 10px; border: 2px dashed var(--zelena); border-radius: 14px; background: var(--papier); }
+.navod-zbierka h2 { font-size: 1.1em; color: var(--zelena-tmava); margin: 10px 0 6px; }
+.navod-zbierka ol { margin: 0; padding-left: 22px; }
+.navod-zbierka li { margin-bottom: 8px; font-size: 0.95em; }
+.navod-zbierka li strong { color: var(--zelena-tmava); }
 .hladanie { margin: 24px 0 8px; padding: 16px 20px; background: var(--papier); border: 1px solid var(--linka); border-radius: 14px; }
 .hladanie label { display: block; font-size: 0.9em; color: var(--text-jemny); margin-bottom: 8px; }
 .hladanie input {

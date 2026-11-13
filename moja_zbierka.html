@@ -20,16 +20,25 @@
 
   <main class="obsah">
     <h1>Moja zbierka</h1>
-    <p class="uvod">Obaly čajových vrecúšok z mojej zbierky. Kliknite na firmu a ukážu sa jej vrecúška.</p>
+    <p class="uvod">Obaly čajových vrecúšok z mojej zbierky. Pozrite sa, či tu nájdete aj ten svoj.</p>
     <p class="male" id="pocet-zbierky"></p>
+
+    <section class="navod-zbierka" aria-labelledby="navod-nadpis">
+      <h2 id="navod-nadpis">Ako hľadať v zbierke – tri možnosti</h2>
+      <ol>
+        <li><strong>Podľa firmy.</strong> Nižšie sú firmy zoradené podľa abecedy. Kliknite na firmu a ukážu sa obrázky jej vrecúšok. Kliknite na vrecúško a dozviete sa o ňom viac: čo je na obale napísané, ako sa čaj pripravuje a aké rastliny obsahuje.</li>
+        <li><strong>Napíšte meno firmy alebo čaju.</strong> Do okienka napíšte napríklad <em>Teekanne</em> alebo <em>Earl Grey</em>. Ukáže sa zoznam vrecúšok s krátkym popisom po slovensky. Kliknutím na vrecúško ho otvoríte.</li>
+        <li><strong>Napíšte rastlinu.</strong> Do okienka napíšte napríklad <em>mäta</em> alebo <em>šípka</em>. Ukážu sa všetky vrecúška s touto rastlinou, od všetkých firiem. Keď vrecúško otvoríte a o rastline máme článok, môžete naň kliknúť.</li>
+      </ol>
+    </section>
 
     <aside class="vedeli-ste">
       <p><strong>Vedeli ste?</strong> Čaj, ktorý sa volá „Jahoda“, nemusí chutiť len po jahode. Vo vrecúšku býva často celá partia rastlín – šípky, ibištek, jablko, mäta… Rastlina z názvu je ako spevák na plagáte, ale pieseň hrá celá kapela. Kto chce vedieť, kto v nej hrá, nájde to na zadnej strane obalu – zložky sa tam píšu od tej, ktorej je najviac.</p>
     </aside>
 
     <div class="hladanie">
-      <label for="hladat">Máte doma čaj a zaujíma vás, či ho mám aj ja? Napíšte jeho názov:</label>
-      <input type="search" id="hladat" placeholder="napríklad Earl Grey, citrón, malina…" autocomplete="off">
+      <label for="hladat">Máte doma čaj a zaujíma vás, či ho mám aj ja? Napíšte firmu, názov čaju alebo rastlinu:</label>
+      <input type="search" id="hladat" placeholder="napríklad Teekanne, Earl Grey, mäta…" autocomplete="off">
       <ul id="vysledky" class="vysledky" aria-live="polite"></ul>
     </div>
 
