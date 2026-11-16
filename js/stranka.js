@@ -396,7 +396,41 @@
     box.appendChild(el("p", "male", "Kliknutím na vrecúško ho uvidíte v mojej zbierke aj so zadnou stranou. Zoznam sa dopĺňa sám, ako pribúdajú naskenované obaly."));
   }
 
+  // Jednopísmenové slová (a, i, k, o, s, u, v, z) sa nesmú ocitnúť na konci
+  // riadku – za ne dáme nedeliteľnú medzeru, aby išli na nový riadok so slovom
+  // za nimi. Platí pre celú stránku aj pre texty, ktoré sa dopĺňajú neskôr.
+  var JEDNOPISMENOVE = /(^|[\s („"])([aiksouvzAIKSOUVZ])[ \t\r\n]+/g;
+  function viazTextu(t) {
+    return t.replace(JEDNOPISMENOVE, "$1$2 ").replace(JEDNOPISMENOVE, "$1$2 ");
+  }
+  function viazanie(koren) {
+    if (!koren) return;
+    if (koren.nodeType === 3) {
+      var novy = viazTextu(koren.nodeValue);
+      if (novy !== koren.nodeValue) koren.nodeValue = novy;
+      return;
+    }
+    if (koren.nodeType !== 1 || /^(SCRIPT|STYLE|TEXTAREA|INPUT|CODE|PRE)$/.test(koren.nodeName)) return;
+    var chodec = document.createTreeWalker(koren, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        return n.parentNode.closest("script, style, textarea, code, pre")
+          ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var uzly = [];
+    while (chodec.nextNode()) uzly.push(chodec.currentNode);
+    uzly.forEach(function (n) { viazanie(n); });
+  }
+  function sledujViazanie() {
+    viazanie(document.body);
+    if (!window.MutationObserver) return;
+    new MutationObserver(function (zmeny) {
+      zmeny.forEach(function (z) { [].forEach.call(z.addedNodes, viazanie); });
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    sledujViazanie();
     vreckaPriRastline();
     prezeracObrazkov();
     pripravMenu();

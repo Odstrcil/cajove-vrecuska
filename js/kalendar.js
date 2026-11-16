@@ -14,6 +14,13 @@ window.KALENDAR = [
     odkaz: "svet_caju_lipton.html#thomas", odkaz_text: "Príbeh Thomasa Liptona"
   },
   {
+    den: 23, mesiac: 1, rok: 1843,
+    nazov: "Narodila sa kocka cukru",
+    popis: "Jakub Kryštof Rad, riaditeľ cukrovaru v Dačiciach na Morave, dostal patent na lis na kocky cukru. Predával ich ako „čajový cukor“. Podľa rozprávania ho k tomu priviedla manželka, ktorá sa porezala pri sekaní cukrovej homole.",
+    priblizne: false, vlastny: false, druh: "predmet",
+    odkaz: "svet_caju_cukor.html#kocka", odkaz_text: "Cukor v šálke čaju"
+  },
+  {
     den: 21, mesiac: 5, rok: null,
     nazov: "Medzinárodný deň čaju",
     popis: "Deň čaju vyhlásila Organizácia Spojených národov. Prvýkrát sa oslavoval v roku 2020.",
