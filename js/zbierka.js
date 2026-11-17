@@ -65,7 +65,12 @@ window.ZBIERKA = [
         na_obale: "Žlté vrecúško s červeným pásom a znakom P v ovále.",
         priprava: "10–15 minút",
         rastliny: ["ruža šípová"],
-        poznamka: "" }
+        poznamka: "" },
+      { cislo: "012", skupina: "BIO čaje s obrázkom", nazov: "BIO Tatry bylinný čaj", preklad: "",
+        na_obale: "Vpredu hory a fialové kvety, BIO. Vzadu názov po anglicky, česky a rusky („Tatras, Tatra, Татры“), zloženie v latinčine a značky „Slovenská potravina“ a „Čistý prírodný produkt“. K vrecúšku patrí visačka s logom Elixír.",
+        priprava: "2,5 dl, 100 °C, 10–15 minút",
+        rastliny: ["mäta pieporná", "slez maurský", "rumanček kamilkový"],
+        poznamka: "Zloženie: bio mäta pieporná, bio slez maurský (kvet aj vňať) a bio rumanček kamilkový. Darček od syna." }
     ]
   },
   {
@@ -302,7 +307,12 @@ window.ZBIERKA = [
         na_obale: "Vpredu dievčatko v klobúku z kvetov a vetvičky rakytníka. Vzadu po česky „Dětský s rakytníkem na obranyschopnost“, aj anglicky a nemecky. Firma uvádza, že čaj má podporiť obranyschopnosť.",
         priprava: "250 ml, 100 °C, 10–15 minút",
         rastliny: ["rakytník"],
-        poznamka: "Dar od pani učiteľky – jeden z detských čajov, ktoré pre mňa objednala. Príbeh je v článku „Od 137 k 200“ (Život zberateľa)." }
+        poznamka: "Dar od pani učiteľky – jeden z detských čajov, ktoré pre mňa objednala. Príbeh je v článku „Od 137 k 200“ (Život zberateľa)." },
+      { cislo: "005", nazov: "Zázvorový s citrónem a mátou", preklad: "zázvorový čaj s citrónom a mätou (po česky)",
+        na_obale: "Béžové vrecúško s kresbou zázvoru, citróna a mäty, BIO. Vzadu „návod na přípravu“. K vrecúšku patrí zelená visačka „Apotheke Organic“ a vzadu „BIO your herbal tea“.",
+        priprava: "250 ml, 100 °C, 10–15 minút",
+        rastliny: ["mäta pieporná", "ruža šípová", "zázvor", "citrón", "sladké drievko"],
+        poznamka: "Podľa krabičky je v ňom najviac mäty piepornej (35 %) a šípok (35 %), zázvoru len 20 %, k tomu citrónová kôra a sladké drievko. Ako pri čaji „Jahoda“ – meno na obale neprezradí, čoho je najviac. Dar od kamarátov šermiarov." }
     ]
   },
   {
@@ -357,7 +367,12 @@ window.ZBIERKA = [
         na_obale: "Vpredu anglicky „HERBAL TEA“, vzadu po slovensky „BYLINNÝ ČAJ“. Celé vrecúško pokrývajú kresby bylín a kvetov.",
         priprava: "",
         rastliny: [],
-        poznamka: "Dar od pani učiteľky. Príbeh je v článku „Od 137 k 200“ (Život zberateľa)." }
+        poznamka: "Dar od pani učiteľky. Príbeh je v článku „Od 137 k 200“ (Život zberateľa)." },
+      { cislo: "003", nazov: "Repíkový čaj", preklad: "",
+        na_obale: "Biele vrecúško s kresbami bylín a zeleným logom, názov po slovensky aj po česky („Řepíkový čaj“). Vzadu príprava. K vrecúšku patrí okrúhla zelená visačka.",
+        priprava: "100 °C, 250 ml, 10–15 minút",
+        rastliny: ["repík lekársky"],
+        poznamka: "Na krabičke sa píše, že repík lekársky bol kedysi v ľudovom liečiteľstve považovaný za „univerzálny všeliek“ a pre príjemnú vôňu sa pestoval v mnohých záhradách. Dar od kamarátov šermiarov." }
     ]
   },
   {
@@ -542,6 +557,7 @@ window.ZBIERKA = [
   {
     id: "cba", nazov: "CBA",
     o_firme: "Vlastná značka obchodov CBA. Na vrecúšku je napísané „Vyrobené pre CBA“ – vyrába ho slovenská firma Herbex.",
+    odkaz: { text: "Vrecúško firmy Herbex v mojej zbierke", subor: "moja_zbierka_firma.html?firma=herbex" },
     vrecuska: [
       { cislo: "001", nazov: "Premium Bylinkový čaj", preklad: "",
         na_obale: "Vpredu šálka a pásik gréckeho vzoru. Vzadu hmotnosť 1,5 g, nápis „OPEN“ (tu otvoriť), obrázky prípravy a výrobca: Herbex s.r.o., Slovenská republika, www.herbex.sk.",
@@ -1143,7 +1159,17 @@ window.ZBIERKA = [
         na_obale: "Žlté vrecúško s červenými štvorcami a štyrikrát nápisom „Klub čaj“. Vzadu „Čajová zmes vyniká silnou vôňou a krásnou granátovou farbou.“",
         priprava: "1,5 g",
         rastliny: [],
-        poznamka: "Iný obal ako Popradský 018 – asi iné obdobie." }
+        poznamka: "Iný obal ako Popradský 018 – asi iné obdobie." },
+      { cislo: "020", skupina: "Bylinné čaje – farebný pás a počet bylín", nazov: "Kašeľ a priedušky", preklad: "",
+        na_obale: "Biele vrecúško s modrým pásom, „5 účinných bylín“. Vzadu „Vychutnajte si Popradský bylinný čaj v pokoji a oddýchnite si pri vašej obľúbenej šálke.“ Na červenej visačke je vpredu „Popradský“ a vzadu „Môj čaj“.",
+        priprava: "100 °C, 8–10 minút",
+        rastliny: ["tymián", "lipa", "fenikel", "aníz", "sladké drievko"],
+        poznamka: "Rovnaký názov ako Popradský 007, ale iný obal aj zloženie: tu je 5 bylín, v 007 šesť (navyše stavikrv vtáčí). Dar od kamarátov šermiarov." },
+      { cislo: "021", skupina: "Bylinné čaje – farebný pás a počet bylín", nazov: "Na hrdlo so šalviou", preklad: "",
+        na_obale: "Biele vrecúško so zeleným pásom, „6 účinných bylín“. Vzadu „Vychutnajte si Popradský bylinný čaj v pokoji a oddýchnite si pri vašej obľúbenej šálke.“",
+        priprava: "100 °C, 8–10 minút",
+        rastliny: ["tymián", "šalvia", "rumanček kamilkový", "zázvor", "škorica", "baza čierna"],
+        poznamka: "Dar od kamarátov šermiarov." }
     ]
   },
   {
@@ -1266,6 +1292,29 @@ window.ZBIERKA = [
         priprava: "3–4 minúty",
         rastliny: ["čajovník čínsky"],
         poznamka: "Dvojsté vrecúško, ktoré si môžete pozrieť na tejto stránke. Našlo sa pri zákusku v cukrárni." }
+    ]
+  },
+  {
+    id: "eilles", nazov: "Eilles",
+    o_firme: "Nemecká čajová a kávová značka z Mníchova. Podľa firmy ju založil Joseph Eilles v roku 1873; doložené je, že v roku 1886 už bol bavorským kráľovským dvorným dodávateľom – preto má značka na obale erb s korunou. Dnes patrí hamburskej firme J. J. Darboven, ktorej adresa je aj na vrecúšku.",
+    vrecuska: [
+      { cislo: "001", skupina: "Tea Diamond", nazov: "Sommerbeeren – Summer Berry", preklad: "letné bobule – ovocný čaj aromatizovaný",
+        na_obale: "Tmavozelené vrecúško s ružovým pásom a erbom s korunou. Vzadu po nemecky a anglicky: „Liebliche Früchtemischung mit der Geschmacksnote Erdbeer-Himbeer“ – ľúbezná ovocná zmes s chuťou jahody a maliny. Pyramídové vrecúško „Tea Diamond“, 4 g. K vrecúšku patrí visačka s erbom a nápisom „Summerberries, 5–10 min“.",
+        priprava: "100 °C, 5–10 minút, 4 g",
+        rastliny: ["jablko", "ibištek", "ruža šípová", "baza čierna"],
+        poznamka: "Zloženie: jablko, ibištek (32 %), šupky šípok, bazové bobule a príchute maliny, jahody a smotany. Jahody ani maliny v ňom nie sú – len ich príchuť. Najprv som ho vypil, potom naskenoval." }
+    ]
+  },
+  {
+    id: "herbex", nazov: "Herbex",
+    o_firme: "Slovenská firma, „Kvalitné prírodné čaje“. Výroba vo Vinici, prevádzka v Hrašnom – adresa je na vrecúšku, www.herbex.sk. Herbex vyrába aj čaj pre obchody CBA, ktorý je tiež v mojej zbierke.",
+    odkaz: { text: "Čaj CBA, ktorý vyrába Herbex", subor: "moja_zbierka_firma.html?firma=cba" },
+    vrecuska: [
+      { cislo: "001", nazov: "Mäta z myjavských kopaníc", preklad: "",
+        na_obale: "Tmavomodré vrecúško s lístkami mäty, nápis „Kvalitné regionálne produkty“ a znak regionálneho produktu Kopanice. Vzadu výrobca a príprava.",
+        priprava: "100 °C, 5–10 minút",
+        rastliny: ["mäta"],
+        poznamka: "Myjavské kopanice sú kraj roztrúsených osád – kopaníc – v kopcoch na západe Slovenska." }
     ]
   }
 ];
