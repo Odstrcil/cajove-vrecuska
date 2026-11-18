@@ -99,7 +99,9 @@
     if (!pole || !vysledky) return;
 
     function bezDiakritiky(t) {
-      return t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+      // ø, æ, ß sa nerozložia samy – preto ich nahradíme ručne (Økologisk = okologisk)
+      return t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
+        .replace(/ø/g, "o").replace(/æ/g, "ae").replace(/ß/g, "ss");
     }
 
     pole.addEventListener("input", function () {
