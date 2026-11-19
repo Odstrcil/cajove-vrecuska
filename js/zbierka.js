@@ -854,6 +854,7 @@ window.ZBIERKA = [
   {
     id: "lord_nelson", nazov: "Lord Nelson",
     o_firme: "Vlastná značka obchodov Lidl. Názvy po nemecky a anglicky, na vrecúškach odznak „Finest Quality Tea“. Zadné strany sú takmer rovnaké ako predné.",
+    odkaz: { text: "Čajová detektívka: Kto je pán v medailóne?", subor: "svet_caju_nelson.html" },
     vrecuska: [
       { cislo: "001", nazov: "Grüner Tee Vanille", preklad: "zelený čaj s vanilkou",
         na_obale: "Zelené vrecúško s oranžovou elipsou a nápisom „Vanille“.",
