@@ -11,6 +11,7 @@ window.SEKCIE = [
 // pripíše navrch. Novinky sú upútavky: majú návštevníka zlákať, nie len oznámiť.
 // odkaz: stránka, na ktorú novinka vedie.
 window.NOVINKY = [
+  { datum: "19. 11. 2026", text: "Neznáma pani a vrecúško v konvičke", odkaz: "zivot_zberatela_spisska.html" },
   { datum: "17. 11. 2026", text: "Kráľovský čaj a 6 ďalších vrecúšok", odkaz: "moja_zbierka_firma.html?firma=eilles" },
   { datum: "16. 11. 2026", text: "Čo prezradila cukornička", odkaz: "svet_caju_cukor.html" },
   { datum: "12. 11. 2026", text: "Slané pery a dvojsté vrecúško", odkaz: "zivot_zberatela_roznava.html" },

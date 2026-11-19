@@ -231,6 +231,12 @@
       riadok("Rastliny", r);
     }
     riadok("Poznámka", v.poznamka);
+    // Odkaz pri jednom vrecúšku, napr. na príbeh zo Života zberateľa.
+    if (v.odkaz) {
+      var ao = el("a", null, v.odkaz.text);
+      ao.href = v.odkaz.subor;
+      riadok("Príbeh", ao);
+    }
     obsah.appendChild(dl);
 
     // Dole: listovanie na susedné vrecúško tej istej firmy a veľké tlačidlo Zavrieť.

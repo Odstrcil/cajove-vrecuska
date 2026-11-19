@@ -601,7 +601,7 @@ window.ZBIERKA = [
   },
   {
     id: "julius_meinl", nazov: "Julius Meinl",
-    o_firme: "Viedenská firma – na vrecúšku je napísané „Vienna 1862“ (Viedeň 1862).",
+    o_firme: "Viedenská firma – na vrecúšku je napísané „Vienna 1862“ (Viedeň 1862). Na obale je aj adresa Julius-Meinl-Gasse vo Viedni – ulica nesie meno Juliusa Meinla.",
     vrecuska: [
       { cislo: "001", nazov: "Čaj ovocná zmes s čerešňovou príchuťou", preklad: "",
         na_obale: "Vpredu po slovensky, s obrázkom čerešní, citrusov, bobúľ a kvetu. Vzadu len obrázky prípravy.",
@@ -612,7 +612,13 @@ window.ZBIERKA = [
         na_obale: "Lesklá červená fólia s bodkami. Vpredu „Fruit Tea“ (ovocný čaj) v troch jazykoch. Vzadu anglický návod: zaliať vriacou vodou a nechať lúhovať 5–10 minút.",
         priprava: "100 °C, 5–10 minút, 2,5 g",
         rastliny: [],
-        poznamka: "Nemecké „Früchtereigen“ znamená ovocný tanec v kruhu. Ktoré ovocie je vnútri, napísané nie je." }
+        poznamka: "Nemecké „Früchtereigen“ znamená ovocný tanec v kruhu. Ktoré ovocie je vnútri, napísané nie je." },
+      { cislo: "003", nazov: "Organic Cherry Pomegranate – Bio Kirsche Granatapfel – Вишня Гранат", preklad: "bio čerešňa a granátové jablko (anglicky, nemecky, rusky)",
+        na_obale: "Nie obyčajné vrecúško, ale celé malé balenie: v priehľadnom sáčku je kartónové puzdro s oválnym okienkom, cez ktoré vidno čaj, a z puzdra sa vysúva ploché papierové vrecúško bez šnúrky. Na obrázku je kartónové puzdro. Vpredu akvarel čerešní, granátového jablka a citrónovej trávy, za nimi rytina polí. Hore nápis „No plastic wrappings“ – priehľadná fólia aj vrecúško sa majú rozložiť v prírode. Bio značka EÚ a žabka Rainforest Alliance. Vzadu zloženie po anglicky a „Filtermaterial über die Biotonne entsorgen“ – filter patrí do bioodpadu.",
+        priprava: "100 °C, 5–10 minút, 4 g",
+        rastliny: ["jablko", "ibištek", "citrónová tráva", "fenikel", "sladké drievko", "zázvor", "škorica", "čerešňa", "granátové jablko", "kardamón", "ruža"],
+        poznamka: "Názov sľubuje čerešne a granátové jablko, ale čerešní je len 2 % a zrniek granátového jablka 1 %. Najviac je citrónovej trávy (18 %), k tomu jablko, ibištek, fenikel, karob, sladké drievko, zázvor, škorica, kardamón a lupienky ruže. A ešte jazyková zaujímavosť: ruské „вишня“ znamená skôr višňu – čerešňa je po rusky „черешня“. Pitý v cukrárni v Spišskej Novej Vsi, kde majú len čaje Julius Meinl – aj s hrnčekmi a konvičkou s ich logom.",
+        odkaz: { text: "Neznáma pani a vrecúško v konvičke – ako bolo zabalené a ako sa to vlastne pije", subor: "zivot_zberatela_spisska.html" } }
     ]
   },
   {
