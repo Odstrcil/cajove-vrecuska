@@ -45,12 +45,12 @@ window.ZBIERKA = [
         na_obale: "Červené vrecúško s fialovým pásom a znakom P v ovále.",
         priprava: "10–15 minút",
         rastliny: [],
-        poznamka: "" },
+        poznamka: "Ten istý čaj v novšom zelenom obale je Elixír 014." },
       { cislo: "008", skupina: "Staršie obaly – písmeno P v ovále", nazov: "Čierny čaj gruzínsky", preklad: "",
         na_obale: "Zlatohnedé vrecúško s tmavozeleným pásom a znakom P v ovále.",
         priprava: "2–3 dl, 90 °C, 3–5 minút",
         rastliny: ["čajovník čínsky"],
-        poznamka: "Čaj z Gruzínska – kedysi veľmi rozšírený čierny čaj v našich obchodoch." },
+        poznamka: "Čaj z Gruzínska – kedysi veľmi rozšírený čierny čaj v našich obchodoch. Novší obal je Elixír 015." },
       { cislo: "009", skupina: "Staršie obaly – písmeno P v ovále", nazov: "Fyto – čistiaci", preklad: "",
         na_obale: "Hnedé vrecúško so žltým pásom a znakom P v ovále.",
         priprava: "10–15 minút",
@@ -70,7 +70,22 @@ window.ZBIERKA = [
         na_obale: "Vpredu hory a fialové kvety, BIO. Vzadu názov po anglicky, česky a rusky („Tatras, Tatra, Татры“), zloženie v latinčine a značky „Slovenská potravina“ a „Čistý prírodný produkt“. K vrecúšku patrí visačka s logom Elixír.",
         priprava: "2,5 dl, 100 °C, 10–15 minút",
         rastliny: ["mäta pieporná", "slez maurský", "rumanček kamilkový"],
-        poznamka: "Zloženie: bio mäta pieporná, bio slez maurský (kvet aj vňať) a bio rumanček kamilkový. Darček od syna." }
+        poznamka: "Zloženie: bio mäta pieporná, bio slez maurský (kvet aj vňať) a bio rumanček kamilkový. Darček od syna." },
+      { cislo: "013", skupina: "BIO čaje s obrázkom", nazov: "BIO Goralský čaj – zdruf", preklad: "",
+        na_obale: "Vpredu goral v kroji, drevené stavby a skalnaté štíty, okolo pás s goralskými kvietkami. Vzadu zloženie po slovensky aj s latinskými menami, obrázky prípravy a značky „Slovenská potravina“ a „Čistý prírodný produkt“.",
+        priprava: "2,5 dl, 100 °C, 10 minút",
+        rastliny: ["mäta pieporná", "rebríček obyčajný", "skorocel kopijovitý", "rumanček kamilkový"],
+        poznamka: "Zloženie: bio mäta pieporná, bio rebríček obyčajný, bio skorocel kopijovitý a bio rumanček kamilkový – presne ako pri Pltníckom čaji (Elixír 002). Rovnaký čaj, iný obrázok: raz pltník, raz goral. „Zdruf“ je nárečové slovo, asi „zdravý“. Z raňajok v hoteli v Tatrách (október 2026)." },
+      { cislo: "014", skupina: "Novšie logo „elixír“", nazov: "Lesná zmes – na osvieženie", preklad: "",
+        na_obale: "Zelené vrecúško, vpravo modrý pás s kresbou rastliny a novším logom elixír. Vzadu „Čaje z pestovaných a divorastúcich liečivých rastlín, drobného ovocia a lesných plodov“ a obrázky prípravy.",
+        priprava: "2–3 dl, 99 °C, 10–15 minút",
+        rastliny: [],
+        poznamka: "Ten istý čaj mám aj v staršom červenom obale – Elixír 007. Z raňajok v hoteli v Tatrách (október 2026)." },
+      { cislo: "015", skupina: "Novšie logo „elixír“", nazov: "Gruzínsky čaj – cudzokrajný", preklad: "",
+        na_obale: "Biele vrecúško s lístkami čajovníka a hnedým pásom. „Čierny čaj, všeobecné použitie – Slovenský prírodný produkt – Prvotriedna kvalita“. Vzadu príprava a obrázky. Zloženie je schované pod prehnutým okrajom – uvidí ho len ten, kto vrecúško mierne ohne. Mňa upútal svojou jednoduchosťou a strohosťou – písmo vyzerá, akoby ho niekto vyťukal na písacom stroji.",
+        priprava: "2,5 dl, 98 °C, 3–4 minúty",
+        rastliny: ["čajovník čínsky"],
+        poznamka: "Zloženie spod okraja: „Čierny čaj – list (Folium thea sinensis)“. Na zadnej strane stojí aj: „Čaj pijeme 2 krát denne.“ Zaujímavé je aj spojenie „cudzokrajný“ a „Slovenský prírodný produkt“ na tom istom obale – čaj z Gruzínska, ale od slovenskej firmy. Ten istý čaj v staršom obale je Elixír 008. Z raňajok v hoteli v Tatrách (október 2026)." }
     ]
   },
   {
@@ -612,13 +627,23 @@ window.ZBIERKA = [
         na_obale: "Lesklá červená fólia s bodkami. Vpredu „Fruit Tea“ (ovocný čaj) v troch jazykoch. Vzadu anglický návod: zaliať vriacou vodou a nechať lúhovať 5–10 minút.",
         priprava: "100 °C, 5–10 minút, 2,5 g",
         rastliny: [],
-        poznamka: "Nemecké „Früchtereigen“ znamená ovocný tanec v kruhu. Ktoré ovocie je vnútri, napísané nie je." },
+        poznamka: "Nemecké „Früchtereigen“ znamená ovocný tanec v kruhu. Ktoré ovocie je vnútri, napísané nie je – zloženie je až na novšom obale, Julius Meinl 004." },
       { cislo: "003", nazov: "Organic Cherry Pomegranate – Bio Kirsche Granatapfel – Вишня Гранат", preklad: "bio čerešňa a granátové jablko (anglicky, nemecky, rusky)",
         na_obale: "Nie obyčajné vrecúško, ale celé malé balenie: v priehľadnom sáčku je kartónové puzdro s oválnym okienkom, cez ktoré vidno čaj, a z puzdra sa vysúva ploché papierové vrecúško bez šnúrky. Na obrázku je kartónové puzdro. Vpredu akvarel čerešní, granátového jablka a citrónovej trávy, za nimi rytina polí. Hore nápis „No plastic wrappings“ – priehľadná fólia aj vrecúško sa majú rozložiť v prírode. Bio značka EÚ a žabka Rainforest Alliance. Vzadu zloženie po anglicky a „Filtermaterial über die Biotonne entsorgen“ – filter patrí do bioodpadu.",
         priprava: "100 °C, 5–10 minút, 4 g",
         rastliny: ["jablko", "ibištek", "citrónová tráva", "fenikel", "sladké drievko", "zázvor", "škorica", "čerešňa", "granátové jablko", "kardamón", "ruža"],
         poznamka: "Názov sľubuje čerešne a granátové jablko, ale čerešní je len 2 % a zrniek granátového jablka 1 %. Najviac je citrónovej trávy (18 %), k tomu jablko, ibištek, fenikel, karob, sladké drievko, zázvor, škorica, kardamón a lupienky ruže. A ešte jazyková zaujímavosť: ruské „вишня“ znamená skôr višňu – čerešňa je po rusky „черешня“. Pitý v cukrárni v Spišskej Novej Vsi, kde majú len čaje Julius Meinl – aj s hrnčekmi a konvičkou s ich logom.",
-        odkaz: { text: "Neznáma pani a vrecúško v konvičke – ako bolo zabalené a ako sa to vlastne pije", subor: "zivot_zberatela_spisska.html" } }
+        odkaz: { text: "Neznáma pani a vrecúško v konvičke – ako bolo zabalené a ako sa to vlastne pije", subor: "zivot_zberatela_spisska.html" } },
+      { cislo: "004", nazov: "Fruit Symphony – Früchtereigen – Фруктовая симфония", preklad: "ovocná symfónia (anglicky, nemecky, rusky)",
+        na_obale: "Novší obal: červené pásy po okrajoch, vpredu biele pole s akvarelom ovocia, škorice a bazy a nápis „Flavoured Fruit Tea“ (ochutený ovocný čaj). Vzadu zloženie a návod po anglicky.",
+        priprava: "100 °C, 5–10 minút, 2,5 g",
+        rastliny: ["ibištek", "ruža šípová", "jablko", "pomaranč", "škorica", "citrón", "baza čierna"],
+        poznamka: "Rovnomenný čaj ako Julius Meinl 002, ale v inom obale – a tentoraz aj so zložením: ibištek 37 %, šípky 32 %, jablko 10 %, pomarančová kôra 5 %, škorica 5 %, citrónová kôra 1 %, baza 1 % a arómy. Vzadu „Used teabag to be disposed in organic waste“ – použité vrecúško patrí do bioodpadu. Z raňajok v hoteli v Tatrách (október 2026)." },
+      { cislo: "005", nazov: "White Tea Peach – Weisser Tee Pfirsich – Белый чай персик", preklad: "biely čaj s broskyňou (anglicky, nemecky, rusky)",
+        na_obale: "Sivé pásy po okrajoch, vpredu biele pole s akvarelom broskýň a nápis „Flavoured White Tea“ (ochutený biely čaj). Vzadu zloženie a návod po anglicky.",
+        priprava: "80 °C, 2–4 minúty, 1,75 g",
+        rastliny: ["čajovník čínsky", "jablko", "sladké drievko", "broskyňa"],
+        poznamka: "Zloženie: biely čaj 56 %, kúsky jablka, arómy, koreň sladkého drievka a granulky z broskyne – tých je len 0,1 %. Biely čaj sa zalieva vodou len 80-stupňovou. Z raňajok v hoteli v Tatrách (október 2026)." }
     ]
   },
   {
@@ -1322,6 +1347,23 @@ window.ZBIERKA = [
         priprava: "100 °C, 5–10 minút",
         rastliny: ["mäta"],
         poznamka: "Myjavské kopanice sú kraj roztrúsených osád – kopaníc – v kopcoch na západe Slovenska." }
+    ]
+  },
+  {
+    id: "messmer", nazov: "Meßmer",
+    o_firme: "Nemecká značka čaju, rad „Classic Moments“. Začiatky siahajú do roku 1852, keď Eduard Meßmer otvoril v Baden-Badene obchod s koloniálnym tovarom a čajom. Dnes značka patrí firme Ostfriesische Tee Gesellschaft – tej istej, ktorá podľa nemeckých stránok balí aj čaje Lord Nelson pre Lidl. Na vrecúškach je žabka Rainforest Alliance a „Bitte im Altpapier entsorgen – Please recycle“ (patrí do zberu papiera).",
+    odkaz: { text: "Čajová detektívka o čaji Lord Nelson", subor: "svet_caju_nelson.html" },
+    vrecuska: [
+      { cislo: "001", nazov: "Ingwer-Zitrone – Ginger-Lemon", preklad: "zázvor a citrón (nemecky, anglicky)",
+        na_obale: "Tmavomodré vrecúško so žltými pásmi, „Kräutertee – Herbal infusion“ (bylinný čaj). Predná a zadná strana sú takmer rovnaké, vzadu je navyše číslo šarže. Visačka je z jednej strany žltá s názvom, z druhej tmavomodrá s logom.",
+        priprava: "6 minút, 2 g",
+        rastliny: ["zázvor", "citrón"],
+        poznamka: "Zloženie na vrecúšku nie je. Z výletu do Spišskej Kapituly (október 2026)." },
+      { cislo: "002", nazov: "Waldbeere – Wild Berries", preklad: "lesné ovocie (nemecky, anglicky)",
+        na_obale: "Tmavomodré vrecúško s ružovofialovými pásmi, „Früchtetee mit Waldbeeren-Aroma – Fruit infusion with wild berry flavour“ (ovocný čaj s arómou lesného ovocia), „70 % fruits“. Predná a zadná strana sú takmer rovnaké.",
+        priprava: "5–8 minút, 2,5 g",
+        rastliny: [],
+        poznamka: "70 % ovocia, ale ktorého, napísané nie je – lesné ovocie je tu aróma. Z výletu do Spišskej Kapituly (október 2026)." }
     ]
   }
 ];
