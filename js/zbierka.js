@@ -387,7 +387,12 @@ window.ZBIERKA = [
         na_obale: "Biele vrecúško s kresbami bylín a zeleným logom, názov po slovensky aj po česky („Řepíkový čaj“). Vzadu príprava. K vrecúšku patrí okrúhla zelená visačka.",
         priprava: "100 °C, 250 ml, 10–15 minút",
         rastliny: ["repík lekársky"],
-        poznamka: "Na krabičke sa píše, že repík lekársky bol kedysi v ľudovom liečiteľstve považovaný za „univerzálny všeliek“ a pre príjemnú vôňu sa pestoval v mnohých záhradách. Dar od kamarátov šermiarov." }
+        poznamka: "Na krabičke sa píše, že repík lekársky bol kedysi v ľudovom liečiteľstve považovaný za „univerzálny všeliek“ a pre príjemnú vôňu sa pestoval v mnohých záhradách. Dar od kamarátov šermiarov." },
+      { cislo: "004", nazov: "Brusnica / Brusinka & Guarana", preklad: "",
+        na_obale: "Ružovofialové vrecúško s brusnicami a plodmi guarany, názov po slovensky aj po česky, „Ovocno-bylinný čaj aromatizovaný“. Vzadu príprava a výrobca: FYTOPHARMA, a. s., Malacky, www.fytopharma.sk.",
+        priprava: "100 °C, 1/4 l, 6–8 minút",
+        rastliny: ["brusnica", "guarana"],
+        poznamka: "Plody guarany vyzerajú ako malé oči – čierne semienko v bielom „bielku“ a červenej šupke. Rovnakú dvojicu „brusnica a guarana“ má Fytopharma aj vo vianočnej krabici Ovocno-bylinný mix, kde je šesť dvojíc ovocia a bylín." }
     ]
   },
   {
@@ -540,13 +545,13 @@ window.ZBIERKA = [
   },
   {
     id: "biogena", nazov: "Biogena",
-    o_firme: "Na vrecúšku je adresa www.biogena.cz a názov čaju v piatich jazykoch.",
+    o_firme: "Na vrecúšku je adresa www.biogena.cz a názov čaju v piatich jazykoch. Na vianočnej kazete Winter Tea Excellent je napísaný aj výrobca: BIOGENA CB spol. s r. o. z Českých Budějovíc.",
     vrecuska: [
       { cislo: "001", nazov: "Winter Tea Excellent – Vánoční čaj", preklad: "zimný čaj – vianočný čaj",
         na_obale: "Vpredu zlatý nápis „Winter Tea Excellent“, jablko a snehové vločky, po česky „Vánoční čaj, ovocný čaj aromatizovaný“. Vzadu ten istý názov po slovensky (Vianočný čaj), maďarsky, anglicky, poľsky a nemecky.",
         priprava: "100 °C, 250 ml, 6–8 minút, 2,5 g",
         rastliny: [],
-        poznamka: "Zloženie na vrecúšku nie je. „Aromatizovaný“ znamená, že má pridanú arómu (príchuť)." },
+        poznamka: "Na vrecúšku zloženie nie je, ale našiel som ho na vianočnej kazete Winter Tea Excellent, v ktorej tento čaj býva: jablko 65 %, šípky, aróma, koreň čakanky, svätojánsky chlieb (karob), škoricová kôra 4 %, list černice, kyselina citrónová a hruška 1 %. „Aromatizovaný“ znamená, že má pridanú arómu (príchuť). V kazete sú ešte ďalšie tri druhy – Biogena 006, 007 a 008." },
       { cislo: "002", nazov: "Fantastic Tea – Pomeranč & Ženšen", preklad: "fantastický čaj – pomaranč a ženšen",
         na_obale: "Biele vrecúško s plátkami pomaranča a nápisom „Fan-tas-tic Tea“. Vzadu názov po česky, slovensky, maďarsky, anglicky a rusky.",
         priprava: "100 °C, 250 ml, 6–8 minút, 2,5 g",
@@ -566,7 +571,22 @@ window.ZBIERKA = [
         na_obale: "Čierne vrecúško s rozkrojenou hruškou a sušenými lístkami. Vzadu názov v piatich jazykoch.",
         priprava: "100 °C, 250 ml, 6–8 minút, 2,5 g",
         rastliny: ["hruška", "yerba maté"],
-        poznamka: "Yerba maté je juhoamerický nápoj z lístkov cezmíny paraguajskej. Aj ona obsahuje kofeín, hoci to nie je čaj." }
+        poznamka: "Yerba maté je juhoamerický nápoj z lístkov cezmíny paraguajskej. Aj ona obsahuje kofeín, hoci to nie je čaj." },
+      { cislo: "006", nazov: "Winter Tea Excellent – Citrusové plody s kořením", preklad: "zimný čaj – citrusové plody s korením",
+        na_obale: "Tmavočervená lesklá fólia so zlatou kresbou citrusov a škorice, snehové vločky. Vpredu po česky „Citrusové plody s kořením, ovocný čaj aromatizovaný“. Vzadu názov po slovensky, maďarsky, anglicky, poľsky a nemecky.",
+        priprava: "100 °C, 250 ml, 6–8 minút, 2,5 g",
+        rastliny: ["ruža šípová", "jablko", "ibištek", "škorica", "pomaranč", "černica", "citrónová tráva", "klinček", "kardamón", "citrón"],
+        poznamka: "Zloženie je na kazete: šípky, jablko, kvet bieleho ibišteka, škoricová kôra 9 %, aróma, pomarančová kôra 8 %, list černice, citrónová tráva, klinček 2,4 %, kardamón 2 %, citrónová kôra 2 % a pomarančová šťava 0,1 %. Z vianočnej kazety, ktorú som objavil na hornej poličke v kuchyni." },
+      { cislo: "007", nazov: "Winter Tea Excellent – Zimní punč", preklad: "zimný čaj – zimný punč",
+        na_obale: "Tmavočervená lesklá fólia so zlatou kresbou pomaranča a škorice, snehové vločky. Vpredu po česky „Zimní punč, ovocný čaj aromatizovaný“. Vzadu názov v piatich ďalších jazykoch.",
+        priprava: "100 °C, 250 ml, 6–8 minút, 2 g",
+        rastliny: ["jablko", "ruža šípová", "ibištek", "černica", "škorica", "klinček", "pomaranč", "čakanka"],
+        poznamka: "Punč bez kvapky alkoholu: jablko, šípky, ibištek, list černice, aróma, škoricová kôra 6 %, klinček 4 %, kyselina citrónová, pomarančová kôra 3 %, koreň čakanky a pomarančová šťava 0,5 % (zloženie z kazety). Toto vrecúško má len 2 g, ostatné v kazete 2,5 g. Z vianočnej kazety z kuchynskej poličky." },
+      { cislo: "008", nazov: "Winter Tea Excellent – Zázvor s mandarinkou", preklad: "zimný čaj – zázvor s mandarínkou",
+        na_obale: "Tmavočervená lesklá fólia so zlatou kresbou koreňa zázvoru a mandarínky, snehové vločky. Vpredu po česky „Zázvor s mandarinkou, ovocný čaj aromatizovaný“. Vzadu názov v piatich ďalších jazykoch.",
+        priprava: "100 °C, 250 ml, 6–8 minút, 2,5 g",
+        rastliny: ["arónia", "jablko", "zázvor", "ruža šípová", "černica", "čakanka", "mandarínka"],
+        poznamka: "Prekvapenie v zložení: najviac je arónie, až potom zázvorovej zmesi (22 %, a v nej je zázvoru len štvrtina – zvyšok je jablko). Ďalej šípky, jablko, list černice, aróma, koreň čakanky, kyselina citrónová a mandarínková kôra 2 % (zloženie z kazety). Z vianočnej kazety z kuchynskej poličky." }
     ]
   },
   {

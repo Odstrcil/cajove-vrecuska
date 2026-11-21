@@ -180,14 +180,44 @@
     }
   }
 
+  // Práve otvorené vrecúško – kvôli šípkam na klávesnici a posunu prstom.
+  var aktualne = null;
+
+  // Listovanie na susedné vrecúško tej istej firmy (krok -1 alebo +1). Na ďalšiu firmu neskáče.
+  function listuj(krok) {
+    if (!aktualne) return;
+    var i = aktualne.f.vrecuska.indexOf(aktualne.v) + krok;
+    if (i < 0 || i >= aktualne.f.vrecuska.length) return;
+    ukaz(aktualne.f, aktualne.f.vrecuska[i]);
+  }
+
   // Zväčšené vrecúško v okne nad stránkou.
   function ukaz(f, v) {
     var okno = document.getElementById("okno-vrecuska");
     var obsah = document.getElementById("okno-obsah");
     var nadpis = f.nazov + " " + v.cislo + " – " + v.nazov;
+    aktualne = { f: f, v: v };
     obsah.textContent = "";
     obsah.appendChild(el("h2", null, nadpis));
     okno.setAttribute("aria-label", nadpis);
+
+    // Hore: šípky a počítadlo „3 z 5“, aby sa dalo listovať bez rolovania dole.
+    if (f.vrecuska.length > 1) {
+      var poz = f.vrecuska.indexOf(v);
+      var hore = el("div", "okno-hore");
+      var pred = el("button", "okno-krok", "‹ Predošlé");
+      pred.type = "button";
+      pred.disabled = poz === 0;
+      pred.addEventListener("click", function () { listuj(-1); });
+      var dalej = el("button", "okno-krok", "Ďalšie ›");
+      dalej.type = "button";
+      dalej.disabled = poz === f.vrecuska.length - 1;
+      dalej.addEventListener("click", function () { listuj(1); });
+      hore.appendChild(pred);
+      hore.appendChild(el("span", "okno-pocet", (poz + 1) + " z " + f.vrecuska.length));
+      hore.appendChild(dalej);
+      obsah.appendChild(hore);
+    }
     if (v.preklad) obsah.appendChild(el("p", "okno-preklad", v.preklad));
 
     var strany = el("div", "okno-strany");
@@ -267,7 +297,27 @@
     document.getElementById("okno-zavriet").addEventListener("click", function () { okno.close(); });
     // Klik mimo obsahu okna ho zavrie.
     okno.addEventListener("click", function (e) { if (e.target === okno) okno.close(); });
-    okno.addEventListener("close", function () { zmenAdresu(location.pathname + location.search); });
+    okno.addEventListener("close", function () { aktualne = null; zmenAdresu(location.pathname + location.search); });
+
+    // Šípky doľava a doprava na klávesnici.
+    document.addEventListener("keydown", function (e) {
+      if (!okno.open) return;
+      if (e.key === "ArrowLeft") { e.preventDefault(); listuj(-1); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); listuj(1); }
+    });
+
+    // Na mobile: posun prstom doľava = ďalšie, doprava = predošlé.
+    var zaciatok = null;
+    okno.addEventListener("touchstart", function (e) {
+      if (e.touches.length === 1) zaciatok = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }, { passive: true });
+    okno.addEventListener("touchend", function (e) {
+      if (!zaciatok || !e.changedTouches.length) return;
+      var dx = e.changedTouches[0].clientX - zaciatok.x;
+      var dy = e.changedTouches[0].clientY - zaciatok.y;
+      zaciatok = null;
+      if (Math.abs(dx) > 60 && Math.abs(dx) > 1.5 * Math.abs(dy)) listuj(dx < 0 ? 1 : -1);
+    });
   }
 
   // Adresa v prehliadači ukazuje otvorené vrecúško (dá sa skopírovať a poslať).

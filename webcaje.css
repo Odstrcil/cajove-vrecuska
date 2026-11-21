@@ -454,6 +454,11 @@ html { scroll-padding-top: 115px; }
   color: var(--zelena-tmava);
 }
 .okno-krok { justify-self: start; }
+.okno-hore { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; margin: 0 0 14px; }
+.okno-hore .okno-krok:last-child { justify-self: end; }
+.okno-pocet { color: var(--text-jemny); font-size: 0.9em; white-space: nowrap; }
+.okno-krok:disabled { opacity: 0.35; cursor: default; }
+.okno-krok:disabled:hover { background: var(--papier); }
 .okno-zavriet-dole { background: var(--zelena); color: #fff; padding: 6px 24px; }
 .okno-krok:hover, .okno-krok:focus-visible { background: var(--zelena-svetla); }
 .okno-zavriet-dole:hover, .okno-zavriet-dole:focus-visible { background: var(--zelena-tmava); }
