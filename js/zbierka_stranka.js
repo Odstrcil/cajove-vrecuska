@@ -197,27 +197,41 @@
     var obsah = document.getElementById("okno-obsah");
     var nadpis = f.nazov + " " + v.cislo + " – " + v.nazov;
     aktualne = { f: f, v: v };
+    // Krížik Zavrieť sa presúva do lišty – odložiť si ho skôr, než sa obsah vymaže.
+    var zavriet = document.getElementById("okno-zavriet");
     obsah.textContent = "";
-    obsah.appendChild(el("h2", null, nadpis));
     okno.setAttribute("aria-label", nadpis);
 
-    // Hore: šípky a počítadlo „3 z 5“, aby sa dalo listovať bez rolovania dole.
-    if (f.vrecuska.length > 1) {
-      var poz = f.vrecuska.indexOf(v);
-      var hore = el("div", "okno-hore");
-      var pred = el("button", "okno-krok", "‹ Predošlé");
-      pred.type = "button";
-      pred.disabled = poz === 0;
-      pred.addEventListener("click", function () { listuj(-1); });
-      var dalej = el("button", "okno-krok", "Ďalšie ›");
-      dalej.type = "button";
-      dalej.disabled = poz === f.vrecuska.length - 1;
-      dalej.addEventListener("click", function () { listuj(1); });
-      hore.appendChild(pred);
-      hore.appendChild(el("span", "okno-pocet", (poz + 1) + " z " + f.vrecuska.length));
-      hore.appendChild(dalej);
-      obsah.appendChild(hore);
+    // Hore lišta, ktorá pri rolovaní ostane na mieste: šípky, počítadlo „3 z 5“ a Zavrieť.
+    var poz = f.vrecuska.indexOf(v);
+    var viac = f.vrecuska.length > 1;
+    var lista = el("div", "okno-lista");
+    function krok(text, smer, zakazany, trieda) {
+      var b = el("button", trieda, text);
+      b.type = "button";
+      b.disabled = zakazany;
+      b.addEventListener("click", function () { listuj(smer); });
+      return b;
     }
+    if (viac) {
+      lista.appendChild(krok("‹ Predošlé", -1, poz === 0, "okno-krok"));
+      lista.appendChild(el("span", "okno-pocet", (poz + 1) + " z " + f.vrecuska.length));
+      lista.appendChild(krok("Ďalšie ›", 1, poz === f.vrecuska.length - 1, "okno-krok"));
+    }
+    lista.appendChild(zavriet);
+    obsah.appendChild(lista);
+
+    // Na veľkej obrazovke aj veľké trojuholníky vedľa okienka (na stmavenom okraji).
+    if (viac) {
+      var bok1 = krok("‹", -1, poz === 0, "okno-bok okno-bok-vlavo");
+      bok1.setAttribute("aria-label", "Predošlé vrecúško");
+      var bok2 = krok("›", 1, poz === f.vrecuska.length - 1, "okno-bok okno-bok-vpravo");
+      bok2.setAttribute("aria-label", "Ďalšie vrecúško");
+      obsah.appendChild(bok1);
+      obsah.appendChild(bok2);
+    }
+
+    obsah.appendChild(el("h2", null, nadpis));
     if (v.preklad) obsah.appendChild(el("p", "okno-preklad", v.preklad));
 
     var strany = el("div", "okno-strany");
@@ -269,21 +283,7 @@
     }
     obsah.appendChild(dl);
 
-    // Dole: listovanie na susedné vrecúško tej istej firmy a veľké tlačidlo Zavrieť.
-    var poradie = f.vrecuska.indexOf(v);
-    var spodok = el("div", "okno-spodok");
-    function tlacidlo(text, trieda, akcia) {
-      var b = el("button", trieda, text);
-      b.type = "button";
-      b.addEventListener("click", akcia);
-      spodok.appendChild(b);
-    }
-    if (poradie > 0) tlacidlo("‹ Predošlé", "okno-krok", function () { ukaz(f, f.vrecuska[poradie - 1]); });
-    else spodok.appendChild(el("span"));
-    tlacidlo("Zavrieť", "okno-zavriet-dole", function () { okno.close(); });
-    if (poradie < f.vrecuska.length - 1) tlacidlo("Ďalšie ›", "okno-krok", function () { ukaz(f, f.vrecuska[poradie + 1]); });
-    else spodok.appendChild(el("span"));
-    obsah.appendChild(spodok);
+    // Spodné tlačidlá netreba – lišta hore ostáva stále na očiach (Ujo Lubo, 21. 11. 2026).
     okno.scrollTop = 0;
 
     zmenAdresu("#v" + v.cislo);

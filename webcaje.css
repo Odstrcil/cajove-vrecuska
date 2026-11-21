@@ -412,7 +412,7 @@ html { scroll-padding-top: 115px; }
 .okno-vrecuska {
   width: min(900px, calc(100% - 24px));
   max-height: calc(100% - 24px);
-  padding: 20px 24px;
+  padding: 0 24px 20px;
   border: none;
   border-radius: 14px;
   background: var(--papier);
@@ -454,9 +454,32 @@ html { scroll-padding-top: 115px; }
   color: var(--zelena-tmava);
 }
 .okno-krok { justify-self: start; }
-.okno-hore { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; margin: 0 0 14px; }
-.okno-hore .okno-krok:last-child { justify-self: end; }
+/* Lišta hore v okienku vrecúška – pri rolovaní ostane na mieste. */
+.okno-lista {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: center; gap: 8px;
+  margin: 0 -24px 12px; padding: 12px 24px 10px;
+  background: var(--papier);
+  border-bottom: 1px solid var(--linka);
+}
+.okno-lista .okno-pocet { flex: 1; text-align: center; }
+.okno-lista .okno-zavriet { float: none; margin-left: auto; }
 .okno-pocet { color: var(--text-jemny); font-size: 0.9em; white-space: nowrap; }
+/* Veľké trojuholníky vedľa okienka – len na širokej obrazovke, kde je vedľa neho miesto. */
+.okno-bok { display: none; }
+@media (min-width: 1120px) {
+  .okno-bok {
+    display: block; position: fixed; top: 50%; transform: translateY(-50%);
+    width: 64px; height: 64px; border-radius: 50%;
+    font: inherit; font-size: 2.6em; line-height: 1; padding: 0 0 6px;
+    background: rgba(255, 255, 255, 0.88); color: var(--zelena-tmava);
+    border: none; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  }
+  .okno-bok-vlavo { left: calc(50% - 450px - 88px); }
+  .okno-bok-vpravo { right: calc(50% - 450px - 88px); }
+  .okno-bok:hover, .okno-bok:focus-visible { background: #fff; }
+  .okno-bok:disabled { visibility: hidden; }
+}
 .okno-krok:disabled { opacity: 0.35; cursor: default; }
 .okno-krok:disabled:hover { background: var(--papier); }
 .okno-zavriet-dole { background: var(--zelena); color: #fff; padding: 6px 24px; }
@@ -466,7 +489,8 @@ html { scroll-padding-top: 115px; }
 @media (max-width: 600px) {
   .stuha-obal { grid-template-columns: 22px 1fr; gap: 14px; }
   .vrecuska { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .okno-vrecuska { padding: 16px; }
+  .okno-vrecuska { padding: 0 16px 16px; }
+  .okno-lista { margin: 0 -16px 10px; padding: 10px 16px 8px; gap: 6px; }
   .okno-strany { gap: 8px; }
   .okno-krok, .okno-zavriet-dole { padding: 6px 10px; font-size: 0.85em; }
 }
