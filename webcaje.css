@@ -636,6 +636,9 @@ html { scroll-padding-top: 115px; }
 .galeria { list-style: none; padding: 0 !important; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
 .galeria li { margin: 0; }
 .galeria img { border-radius: 8px; aspect-ratio: 1; object-fit: cover; }
+.galeria-vysoke img { aspect-ratio: 3 / 4; }
+.clanok figure.video video { display: block; width: 100%; max-width: 360px; height: auto; margin: 0 auto; border-radius: 8px; background: #222; }
+.clanok figure.video figcaption { text-align: center; }
 
 .upozornenie { margin-top: 16px; font-size: 0.9em; padding-top: 12px; border-top: 1px solid var(--linka); }
 

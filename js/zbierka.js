@@ -1392,5 +1392,6 @@ window.ZBIERKA = [
 window.RASTLINY_STRANKY = {
   "ruža šípová": "svet_caju_ruza_sipova.html",
   "mäta pieporná": "svet_caju_mata_pieporna.html",
-  "vanilka voňavá": "svet_caju_vanilka_vonava.html"
+  "vanilka voňavá": "svet_caju_vanilka_vonava.html",
+  "ibištek": "svet_caju_ibistek_sudansky.html"
 };
