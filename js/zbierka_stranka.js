@@ -235,7 +235,8 @@
     if (v.preklad) obsah.appendChild(el("p", "okno-preklad", v.preklad));
 
     var strany = el("div", "okno-strany");
-    [["p", "predná strana"], ["z", "zadná strana"]].forEach(function (s) {
+    // zadna: false = zadná strana nie je naskenovaná, ukáže sa len predná
+    [["p", "predná strana"], ["z", "zadná strana"]].filter(function (s) { return s[0] === "p" || v.zadna !== false; }).forEach(function (s) {
       var fig = el("figure");
       var a = el("a");
       a.href = cesta(f, v.cislo, s[0]);
