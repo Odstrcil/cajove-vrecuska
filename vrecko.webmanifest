@@ -1,0 +1,14 @@
+{
+  "name": "Zbierka do vrecka",
+  "short_name": "Zbierka",
+  "lang": "sk",
+  "start_url": "vrecko.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f1e2",
+  "theme_color": "#4f6b3a",
+  "icons": [
+    { "src": "obrazky/vrecko/ikona_192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "obrazky/vrecko/ikona_512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

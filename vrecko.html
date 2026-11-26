@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zbierka do vrecka</title>
+  <!-- Skrytá stránka: nie je v menu a vyhľadávače ju nemajú zobrazovať.
+       Slúži na rýchlu kontrolu v obchode, či už vrecúško mám – funguje aj bez internetu. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#4f6b3a">
+  <link rel="manifest" href="vrecko.webmanifest">
+  <link rel="icon" href="obrazky/vrecko/ikona_192.png">
+  <link rel="apple-touch-icon" href="obrazky/vrecko/ikona_192.png">
+  <script src="js/zbierka.js"></script>
+  <style>
+    :root { --zelena: #4f6b3a; --tmava: #2f3e24; --papier: #f6f1e2; --biela: #fffdf6; --ciara: #d9cfb4; --siva: #6d6656; }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--papier); color: var(--tmava); font-family: Georgia, "Times New Roman", serif; font-size: 18px; }
+    header { position: sticky; top: 0; z-index: 5; background: var(--zelena); color: #fff; padding: 10px 12px 8px; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
+    h1 { margin: 0; font-size: 21px; font-weight: normal; display: flex; align-items: center; gap: 10px; }
+    h1 img { width: 34px; height: 34px; border-radius: 8px; }
+    #stav { font-size: 14px; margin: 4px 0 0; opacity: .95; }
+    .tlacidla { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .tlacidla button { font: inherit; font-size: 16px; padding: 8px 14px; border-radius: 22px; border: 0; background: #fff; color: var(--tmava); cursor: pointer; }
+    .tlacidla button[hidden] { display: none; }
+    main { padding: 10px 12px 40px; max-width: 900px; margin: 0 auto; }
+    #hladaj { width: 100%; font: inherit; font-size: 20px; padding: 10px 14px; border: 2px solid var(--ciara); border-radius: 12px; background: var(--biela); }
+    #abeceda { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 12px; }
+    #abeceda button { font: inherit; font-size: 19px; min-width: 42px; height: 42px; border-radius: 10px; border: 1px solid var(--ciara); background: var(--biela); color: var(--tmava); cursor: pointer; padding: 0 8px; }
+    #abeceda button:disabled { opacity: .3; cursor: default; }
+    #abeceda button.zvolene { background: var(--zelena); color: #fff; border-color: var(--zelena); }
+    #firmy { list-style: none; margin: 0; padding: 0; }
+    #firmy a { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 14px 12px; margin-bottom: 6px; background: var(--biela); border: 1px solid var(--ciara); border-radius: 12px; color: var(--tmava); text-decoration: none; font-size: 21px; }
+    #firmy a span { font-size: 15px; color: var(--siva); white-space: nowrap; }
+    .nic { color: var(--siva); font-style: italic; }
+    #spat { font: inherit; font-size: 18px; padding: 8px 16px; border-radius: 22px; border: 1px solid var(--ciara); background: var(--biela); color: var(--tmava); cursor: pointer; }
+    h2 { font-size: 24px; font-weight: normal; margin: 12px 0 2px; }
+    .pocet { color: var(--siva); font-size: 15px; margin: 0 0 10px; }
+    .mriezka { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+    .mriezka button { font: inherit; padding: 4px; border: 1px solid var(--ciara); border-radius: 8px; background: var(--biela); color: var(--tmava); text-align: center; cursor: pointer; }
+    .mriezka img { width: 100%; height: auto; aspect-ratio: 300 / 350; object-fit: contain; display: block; background: #eee8d6; }
+    .mriezka small { display: block; font-size: 12px; line-height: 1.25; margin-top: 3px; overflow-wrap: anywhere; }
+    #velke { position: fixed; inset: 0; z-index: 10; background: rgba(30,30,20,.92); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; color: #fff; text-align: center; }
+    #velke[hidden] { display: none; }
+    #velke img { max-width: 100%; max-height: 75vh; border-radius: 6px; background: #fff; }
+    #velke p { margin: 10px 0 0; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><img src="obrazky/vrecko/ikona_192.png" alt="">Zbierka do vrecka</h1>
+    <p id="stav">&nbsp;</p>
+    <div class="tlacidla">
+      <button type="button" id="ulozit" hidden>Uložiť do mobilu</button>
+      <button type="button" id="na-plochu" hidden>Pridať ikonku na plochu</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="zoznam">
+      <input id="hladaj" type="search" placeholder="Napíšte firmu, napr. pop" autocomplete="off" aria-label="Hľadať firmu">
+      <div id="abeceda" aria-label="Začiatočné písmeno"></div>
+      <ul id="firmy"></ul>
+    </section>
+    <section id="firma" hidden>
+      <button type="button" id="spat">← Všetky firmy</button>
+      <h2 id="firma-nazov"></h2>
+      <p class="pocet" id="firma-pocet"></p>
+      <div class="mriezka" id="mriezka"></div>
+    </section>
+  </main>
+
+  <div id="velke" hidden><img alt=""><p></p></div>
+
+  <script>
+  (function () {
+    var CACHE = "zbierka-do-vrecka";
+    var firmy = (window.ZBIERKA || []).slice().sort(function (a, b) { return a.nazov.localeCompare(b.nazov, "sk"); });
+    var zvolenePismeno = "";
+
+    function bezMakcenov(t) { return t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+    function pismeno(f) { return bezMakcenov(f.nazov.charAt(0)).toUpperCase(); }
+    function vrecusok(n) { return n === 1 ? "1 vrecúško" : (n >= 2 && n <= 4 ? n + " vrecúška" : n + " vrecúšok"); }
+    function obrazok(f, v) { return "obrazky/zbierka/" + f.id + "/" + v.cislo + "_p_male.jpg"; }
+    function $(id) { return document.getElementById(id); }
+    var spolu = firmy.reduce(function (s, f) { return s + f.vrecuska.length; }, 0);
+
+    // ---- Abeceda a zoznam firiem ----
+    var maju = {};
+    firmy.forEach(function (f) { maju[pismeno(f)] = true; });
+    var abeceda = $("abeceda");
+    function tlacidlo(text, hodnota) {
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = text; b.dataset.p = hodnota;
+      b.onclick = function () { zvolenePismeno = (zvolenePismeno === hodnota) ? "" : hodnota; $("hladaj").value = ""; vypisFirmy(); };
+      abeceda.appendChild(b);
+    }
+    tlacidlo("Všetky", "");
+    // len písmená, na ktoré nejaká firma naozaj začína
+    Object.keys(maju).sort().forEach(function (p) { tlacidlo(p, p); });
+
+    function vypisFirmy() {
+      var hladane = bezMakcenov($("hladaj").value.trim());
+      if (hladane) zvolenePismeno = "";
+      Array.prototype.forEach.call(abeceda.children, function (b) { b.classList.toggle("zvolene", b.dataset.p === zvolenePismeno && !hladane); });
+      var ul = $("firmy"); ul.innerHTML = "";
+      var najdene = firmy.filter(function (f) {
+        if (hladane) return bezMakcenov(f.nazov).indexOf(hladane) !== -1;
+        return !zvolenePismeno || pismeno(f) === zvolenePismeno;
+      });
+      najdene.forEach(function (f) {
+        var li = document.createElement("li"), a = document.createElement("a"), s = document.createElement("span");
+        a.href = "#f=" + encodeURIComponent(f.id);
+        a.appendChild(document.createTextNode(f.nazov));
+        s.textContent = vrecusok(f.vrecuska.length); a.appendChild(s);
+        li.appendChild(a); ul.appendChild(li);
+      });
+      if (!najdene.length) { var li = document.createElement("li"); li.className = "nic"; li.textContent = "Takú firmu v zbierke zatiaľ nemám."; ul.appendChild(li); }
+    }
+    $("hladaj").addEventListener("input", vypisFirmy);
+
+    // ---- Vrecúška jednej firmy ----
+    function ukazFirmu(f) {
+      $("firma-nazov").textContent = f.nazov;
+      $("firma-pocet").textContent = vrecusok(f.vrecuska.length) + " · ťuknite na obrázok pre zväčšenie";
+      var m = $("mriezka"); m.innerHTML = "";
+      f.vrecuska.forEach(function (v) {
+        var b = document.createElement("button"), img = document.createElement("img"), t = document.createElement("small");
+        b.type = "button";
+        img.src = obrazok(f, v); img.alt = v.nazov; img.width = 300; img.height = 350; img.loading = "lazy";
+        t.textContent = v.cislo + " · " + v.nazov;
+        b.appendChild(img); b.appendChild(t);
+        b.onclick = function () { var o = $("velke"); o.querySelector("img").src = img.src; o.querySelector("p").textContent = f.nazov + " " + v.cislo + " – " + v.nazov; o.hidden = false; };
+        m.appendChild(b);
+      });
+    }
+    $("velke").onclick = function () { this.hidden = true; };
+    $("spat").onclick = function () { if (history.length > 1 && location.hash) history.back(); else location.hash = ""; };
+
+    function podlaAdresy() {
+      $("velke").hidden = true;
+      var m = /^#f=(.+)$/.exec(location.hash), f = null;
+      if (m) { var id = decodeURIComponent(m[1]); f = firmy.filter(function (x) { return x.id === id; })[0]; }
+      $("zoznam").hidden = !!f; $("firma").hidden = !f;
+      if (f) ukazFirmu(f);
+      window.scrollTo(0, 0);
+    }
+    window.addEventListener("hashchange", podlaAdresy);
+    vypisFirmy(); podlaAdresy();
+
+    // ---- Uloženie do mobilu (funguje potom aj bez internetu) ----
+    // Nič sa neukladá samo: až keď niekto stlačí „Uložiť do mobilu“. Potom sa pri každom
+    // otvorení s internetom doplnia nové vrecúška.
+    var stav = $("stav"), btnUlozit = $("ulozit");
+    function pamat(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+    function zoznamSuborov() {
+      var z = ["vrecko.html", "js/zbierka.js", "vrecko.webmanifest", "obrazky/vrecko/ikona_192.png", "obrazky/vrecko/ikona_512.png"];
+      firmy.forEach(function (f) { f.vrecuska.forEach(function (v) { z.push(obrazok(f, v)); }); });
+      return z;
+    }
+    function dnes() { var d = new Date(); return d.getDate() + ". " + (d.getMonth() + 1) + ". " + d.getFullYear(); }
+    function ukazStav() {
+      if (pamat("vrecko-ulozene")) stav.textContent = "✓ Uložené v mobile – funguje aj bez internetu. " + vrecusok(spolu) + ", " + firmy.length + " firiem. Naposledy doplnené " + pamat("vrecko-ulozene") + ".";
+      else stav.textContent = vrecusok(spolu) + " z " + firmy.length + " firiem.";
+    }
+    var mozno = ("serviceWorker" in navigator) && ("caches" in window);
+
+    function ulozit(potichu) {
+      if (!navigator.onLine) { if (!potichu) stav.textContent = "Teraz nie je internet. Uložte to doma na Wi-Fi."; return; }
+      btnUlozit.disabled = true;
+      return navigator.serviceWorker.register("vrecko_sw.js").then(function () {
+        if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
+        return caches.open(CACHE);
+      }).then(function (cache) {
+        var subory = zoznamSuborov(), hotovo = 0, chyby = 0;
+        function jeden(u) {
+          var vzdy = !/\.(jpg|png)$/.test(u); // stránku a zoznam obnoviť vždy, obrázky len chýbajúce
+          return cache.match(u).then(function (ma) {
+            if (ma && !vzdy) return;
+            return fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw r.status; return cache.put(u, r); });
+          }).catch(function () { chyby++; }).then(function () {
+            hotovo++;
+            if (!potichu && hotovo % 10 === 0) stav.textContent = "Ukladám… " + hotovo + " z " + subory.length;
+          });
+        }
+        // po 6 naraz, aby to bolo rýchle, ale nezahltilo mobil
+        var i = 0;
+        function dalsi() { if (i >= subory.length) return Promise.resolve(); return jeden(subory[i++]).then(dalsi); }
+        return Promise.all([dalsi(), dalsi(), dalsi(), dalsi(), dalsi(), dalsi()]).then(function () {
+          btnUlozit.disabled = false;
+          if (chyby) { if (!potichu) stav.textContent = "Uložené, ale " + chyby + " obrázkov sa nepodarilo. Skúste to ešte raz na Wi-Fi."; return; }
+          pamat("vrecko-ulozene", dnes()); btnUlozit.hidden = true; ukazStav();
+        });
+      }).catch(function () { btnUlozit.disabled = false; if (!potichu) stav.textContent = "Uloženie sa nepodarilo. Skúste to ešte raz na Wi-Fi."; });
+    }
+
+    if (mozno) {
+      btnUlozit.onclick = function () { ulozit(false); };
+      if (pamat("vrecko-ulozene")) ulozit(true); // už uložené: potichu doplniť nové vrecúška
+      else btnUlozit.hidden = false;
+    }
+    ukazStav();
+
+    // Ikonka na plochu (Chrome na Androide ponúkne, keď je stránka uložená)
+    var ponuka = null;
+    window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); ponuka = e; $("na-plochu").hidden = false; });
+    $("na-plochu").onclick = function () { if (!ponuka) return; ponuka.prompt(); ponuka = null; this.hidden = true; };
+    window.addEventListener("appinstalled", function () { $("na-plochu").hidden = true; });
+  })();
+  </script>
+</body>
+</html>
