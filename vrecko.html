@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zbierka do vrecka</title>
-  <!-- Skrytá stránka: nie je v menu a vyhľadávače ju nemajú zobrazovať.
-       Slúži na rýchlu kontrolu v obchode, či už vrecúško mám – funguje aj bez internetu. -->
+  <!-- Zbierka do vrecka: rýchla kontrola v obchode, či už vrecúško mám – funguje aj bez internetu.
+       Od 27. 11. 2026 je na ňu odkaz zo stránky Moja zbierka (pre všetkých). -->
+  <meta name="description" content="Moja zbierka čajových vrecúšok v mobile – firmy od A po Z a obrázky vrecúšok, aj bez internetu.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#4f6b3a">
   <link rel="manifest" href="vrecko.webmanifest">
@@ -34,6 +35,8 @@
     #firmy a { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 14px 12px; margin-bottom: 6px; background: var(--biela); border: 1px solid var(--ciara); border-radius: 12px; color: var(--tmava); text-decoration: none; font-size: 21px; }
     #firmy a span { font-size: 15px; color: var(--siva); white-space: nowrap; }
     .nic { color: var(--siva); font-style: italic; }
+    .pomoc { font-size: 14px; color: var(--siva); margin: 18px 0 0; }
+    .pomoc a { color: var(--zelena); }
     #spat { font: inherit; font-size: 18px; padding: 8px 16px; border-radius: 22px; border: 1px solid var(--ciara); background: var(--biela); color: var(--tmava); cursor: pointer; }
     h2 { font-size: 24px; font-weight: normal; margin: 12px 0 2px; }
     .pocet { color: var(--siva); font-size: 15px; margin: 0 0 10px; }
@@ -63,6 +66,7 @@
       <div id="abeceda" aria-label="Začiatočné písmeno"></div>
       <ul id="firmy"></ul>
     </section>
+    <p class="pomoc">Na iPhone: v Safari ťuknite na tlačidlo Zdieľať (štvorček so šípkou) a vyberte „Pridať na plochu“. · <a href="moja_zbierka.html">Celá stránka Svet čajových vrecúšok</a></p>
     <section id="firma" hidden>
       <button type="button" id="spat">← Všetky firmy</button>
       <h2 id="firma-nazov"></h2>
