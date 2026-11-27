@@ -58,7 +58,7 @@
     { t: "ludia", m: "Meßmer, Eduard", k: "Messmer", r: 1852, v: "nemecký obchodník, v roku 1852 otvoril v Baden-Badene obchod s čajom", o: [F("messmer", "Meßmer")] },
     { t: "ludia", m: "Harney, John", k: "Harney", r: 1970, v: "americký majster miešania čajov, v roku 1970 založil Harney & Sons", o: [F("harney_and_sons", "Harney & Sons")] },
     { t: "ludia", m: "Fredsted, Valdemar", k: "Fredsted", r: null, v: "zakladateľ dánskeho čajového domu Fredsted", o: [F("fredsted", "Fredsted")] },
-    { t: "ludia", m: "Okakura Kakuzó", k: "Okakura", r: 1862, v: "japonský znalec umenia (1862 – 1913), autor Knihy o čaji", o: [CI, K] },
+    { t: "ludia", m: "Okakura Kakuzó", k: "Okakura", r: 1863, v: "japonský znalec umenia (1863 – 1913), autor Knihy o čaji", o: [CI, K] },
     { t: "ludia", m: "Johnson, Samuel", k: "Johnson", r: 1709, v: "anglický spisovateľ (1709 – 1784), autor slovníka angličtiny", o: [CI] },
     { t: "ludia", m: "Boswell, James", k: "Boswell", r: 1740, v: "škótsky spisovateľ (1740 – 1795), životopisec Samuela Johnsona", o: [CI] },
     { t: "ludia", m: "Smith, Sydney", k: "Smith", r: 1771, v: "anglický kňaz a spisovateľ (1771 – 1845), známy svojím vtipom", o: [CI] },

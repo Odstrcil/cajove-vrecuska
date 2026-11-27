@@ -28,7 +28,7 @@ window.AUTORI = {
   "C. S. Lewis": "Britský spisovateľ narodený v Belfaste (1898 – 1963), autor rozprávkových Letopisov Narnie. Výrok o čaji a knihách zaznamenal jeho priateľ Walter Hooper. Preložili sme ho sami z angličtiny.",
   "Arthur Wing Pinero": "Anglický divadelný autor (1855 – 1934). Veta pochádza z jeho veselohry Sweet Lavender (Sladká levanduľa) z roku 1888. Preložili sme ju sami z angličtiny.",
   "Sydney Smith": "Anglický kňaz a spisovateľ (1771 – 1845), známy svojím vtipom. Preložili sme ho sami z angličtiny.",
-  "Okakura Kakuzó": "Japonský znalec umenia (1862 – 1913). V roku 1906 napísal po anglicky slávnu Knihu o čaji (The Book of Tea), z ktorej sú všetky jeho citáty. Preložili sme ich sami z angličtiny.",
+  "Okakura Kakuzó": "Japonský znalec umenia (1863 – 1913). V roku 1906 napísal po anglicky slávnu Knihu o čaji (The Book of Tea), z ktorej sú všetky jeho citáty. Preložili sme ich sami z angličtiny.",
   "Samuel Johnson": "Anglický spisovateľ (1709 – 1784), autor slávneho slovníka angličtiny a veľký milovník čaju. Citát je z jeho článku o čaji z roku 1757. Preložili sme ho sami z angličtiny.",
   "James Boswell": "Škótsky spisovateľ (1740 – 1795), priateľ a životopisec Samuela Johnsona. Preložili sme ho sami z angličtiny.",
   "George Orwell": "Anglický spisovateľ (1903 – 1950), autor kníh Zvieracia farma a 1984. Citát je z jeho článku Dobrá šálka čaju (1946), v ktorom dáva jedenásť rád, ako čaj pripraviť. Preložili sme ho sami z angličtiny."
