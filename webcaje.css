@@ -761,3 +761,27 @@ html { scroll-padding-top: 115px; }
 .spat-hore { margin: 16px 0 0; font-size: 0.85em; }
 .spat-hore a { text-decoration: none; }
 .spat-hore a:hover { text-decoration: underline; }
+
+/* ---- Ľudia na našej stránke (cajove_drobnosti_ludia.html) ---- */
+.ludia-obrazok { margin: 16px 0 8px; }
+.ludia-obrazok img { width: 100%; height: auto; border-radius: 12px; display: block; }
+.ludia-obrazok figcaption { font-size: 0.8em; color: var(--text-jemny); margin-top: 4px; }
+.ludia-legenda { font-size: 0.9em; color: var(--text-jemny); margin: 12px 0; }
+.ludia-stvorcek { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; background: #e6f1fb; border: 1px solid #85b7eb; }
+.ludia-stvorcek.pribeh { background: #eaf3de; border-color: #97c459; }
+.ludia-prepinac { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 12px; }
+.ludia-prepinac button { font: inherit; font-size: 0.95em; padding: 6px 16px; border-radius: 20px; border: 1px solid var(--zelena); background: #fff; color: var(--zelena-tmava); cursor: pointer; }
+.ludia-prepinac button[aria-pressed="true"] { background: var(--zelena); color: #fff; }
+.ludia-pismena { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 8px; }
+.ludia-pismena[hidden] { display: none; }
+.ludia-pismena a { display: inline-block; min-width: 34px; text-align: center; padding: 4px 6px; border-radius: 8px; background: var(--zelena-svetla); text-decoration: none; font-weight: 600; }
+.ludia-nadpis { color: var(--zelena-tmava); font-size: 1.25em; margin: 22px 0 8px; scroll-margin-top: 120px; }
+.ludia-zoznam { list-style: none; margin: 0; padding: 0; }
+.ludia-zoznam li { background: #e6f1fb; border-radius: 8px; padding: 6px 12px; margin: 0 0 5px; line-height: 1.45; }
+.ludia-zoznam li.pribeh { background: #eaf3de; }
+.ludia-meno { font-weight: 700; font-size: 1.05em; color: #0c447c; }
+.ludia-veta { font-size: 0.9em; color: #185fa5; }
+.ludia-zoznam li.pribeh .ludia-meno { color: #27500a; }
+.ludia-zoznam li.pribeh .ludia-veta { color: #3b6d11; }
+.ludia-zoznam a { color: inherit; }
+.ludia-zaver { margin-top: 28px; font-style: italic; color: var(--zelena-tmava); }

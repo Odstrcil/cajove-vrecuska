@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ľudia na našej stránke – Svet čajových vrecúšok</title>
+  <meta name="description" content="Všetci ľudia a postavy, ktoré sa na stránke spomínajú – od Homéra po Alžbetu II.: kto to bol a kde o ňom píšeme.">
+  <link rel="stylesheet" href="webcaje.css">
+  <script data-goatcounter="https://cajove-vrecuska.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <script src="js/sekcie.js"></script>
+  <script src="js/stranka.js"></script>
+  <script src="js/ludia.js"></script>
+</head>
+<body>
+  <header class="vnutorna-hlavicka">
+    <a class="logo" href="index.html"><img src="obrazky/titulka/nadpis.png" alt="Svet čajových vrecúšok – na titulnú stránku" width="900" height="450"></a>
+    <nav id="menu" aria-label="Menu"></nav>
+  </header>
+
+  <main class="obsah">
+    <p class="rubrika"><a href="cajove_drobnosti.html">Čajové drobnosti</a> · <a href="svet_caju_firmy.html">Firmy a ľudia</a></p>
+    <h1>Ľudia na našej stránke</h1>
+
+    <figure class="ludia-obrazok">
+      <img src="obrazky/cajove_drobnosti/ludia.jpg" alt="Akvarel: šálka čaju na stolíku a okolo nej na stene oválne rámčeky s tmavými siluetami – básnik s vavrínovým vencom, pán s námorníckym klobúkom, dáma s vysokým účesom, pán v cylindri, kučeravý chlapec, fúzatý pán v klobúku a rozprávkový škriatok" width="1200" height="800">
+      <figcaption>Ilustrácia vytvorená pomocou umelej inteligencie.</figcaption>
+    </figure>
+
+    <p class="uvod" id="ludia-uvod">Na stránke sa spomína veľa ľudí a postáv – od starovekých básnikov cez cisárov a obchodníkov s čajom až po rozprávkové postavičky. Tu ich máte pokope: kto to bol a kde o ňom píšeme.</p>
+
+    <p class="ludia-legenda"><span class="ludia-stvorcek pribeh"></span> píšeme o ňom viac &nbsp; <span class="ludia-stvorcek"></span> len spomenutý</p>
+
+    <div class="ludia-prepinac" role="group" aria-label="Zoradenie">
+      <button type="button" data-poradie="abeceda" aria-pressed="true">Podľa abecedy</button>
+      <button type="button" data-poradie="cas" aria-pressed="false">Podľa času</button>
+    </div>
+    <nav class="ludia-pismena" id="ludia-pismena" aria-label="Písmená"></nav>
+
+    <div id="ludia-zoznam"></div>
+
+    <p class="ludia-zaver">A potom sú tu ľudia bez mien, bez ktorých by táto stránka nebola: moja rodina, priatelia a všetci, ktorí mi pomáhajú zbierať vrecúška. Ďakujem.</p>
+  </main>
+
+  <footer class="pata">
+    <p>© 2026 Svet čajových vrecúšok</p>
+  </footer>
+
+  <script>
+  (function () {
+    var ludia = window.LUDIA || [], skupiny = window.LUDIA_SKUPINY || {};
+    var zoznam = document.getElementById("ludia-zoznam"), pismena = document.getElementById("ludia-pismena");
+    function el(tag, trieda, text) { var e = document.createElement(tag); if (trieda) e.className = trieda; if (text) e.textContent = text; return e; }
+    function pismeno(k) { return k.charAt(0).normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase(); }
+    function radok(c) {
+      var li = el("li", c.p ? "pribeh" : "");
+      li.appendChild(el("span", "ludia-meno", c.m));
+      li.appendChild(document.createTextNode(" "));
+      var info = el("span", "ludia-veta", "– " + c.v);
+      c.o.forEach(function (o) {
+        info.appendChild(document.createTextNode(" · "));
+        var a = el("a", null, o[0]); a.href = o[1]; info.appendChild(a);
+      });
+      li.appendChild(info);
+      return li;
+    }
+    function blok(nadpis, ludiaBloku, id) {
+      if (!ludiaBloku.length) return;
+      var h = el("h2", "ludia-nadpis", nadpis); if (id) h.id = id; zoznam.appendChild(h);
+      var ul = el("ul", "ludia-zoznam"); ludiaBloku.forEach(function (c) { ul.appendChild(radok(c)); }); zoznam.appendChild(ul);
+    }
+    function abecedne() {
+      zoznam.innerHTML = ""; pismena.innerHTML = ""; pismena.hidden = false;
+      var zor = ludia.slice().sort(function (a, b) { return a.k.localeCompare(b.k, "sk"); });
+      var podla = {};
+      zor.forEach(function (c) { var p = pismeno(c.k); (podla[p] = podla[p] || []).push(c); });
+      Object.keys(podla).sort().forEach(function (p) {
+        var a = el("a", null, p); a.href = "#pismeno-" + p; pismena.appendChild(a);
+        blok(p, podla[p], "pismeno-" + p);
+      });
+    }
+    function casovo() {
+      zoznam.innerHTML = ""; pismena.hidden = true;
+      var skutocni = ludia.filter(function (c) { return c.t === "ludia" || c.t === "autori"; });
+      var s = skutocni.filter(function (c) { return c.r !== null && c.r !== undefined; }).sort(function (a, b) { return a.r - b.r; });
+      blok("Od najstarších po dnešok", s);
+      blok("Rok nevieme presne", skutocni.filter(function (c) { return c.r === null || c.r === undefined; }));
+      blok(skupiny.postavy, ludia.filter(function (c) { return c.t === "postavy"; }));
+      blok(skupiny.caj, ludia.filter(function (c) { return c.t === "caj"; }));
+    }
+    var tlacidla = document.querySelectorAll(".ludia-prepinac button");
+    Array.prototype.forEach.call(tlacidla, function (b) {
+      b.addEventListener("click", function () {
+        Array.prototype.forEach.call(tlacidla, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        if (b.dataset.poradie === "cas") casovo(); else abecedne();
+      });
+    });
+    document.getElementById("ludia-uvod").textContent = "Na stránke sa spomína " + ludia.length +
+      " ľudí a postáv – od starovekých básnikov cez cisárov a obchodníkov s čajom až po rozprávkové postavičky. Tu ich máte pokope: kto to bol a kde o ňom píšeme.";
+    abecedne();
+  })();
+  </script>
+</body>
+</html>
